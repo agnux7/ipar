@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sínodo General IPAR · Iglesia Presbiteriana Asociada Reformada de México A.R.</title>
+<meta name="description" content="Sitio oficial del Sínodo General de la Iglesia Presbiteriana Asociada Reformada de México A.R. — La luz en las tinieblas resplandece.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+<style>
+/* ===================== TOKENS ===================== */
+:root{
+  --azul-noche:#1B2A4A;
+  --azul-noche-90:rgba(27,42,74,.92);
+  --dorado:#B8973A;
+  --dorado-claro:#d3b769;
+  --blanco-hueso:#F7F5F0;
+  --gris-texto:#3A3A3A;
+  --gris-medio:#7A7A7A;
+  --rojo-oscuro:#7A1C1C;
+  --blanco:#ffffff;
+  --linea:rgba(27,42,74,.10);
+
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,sans-serif;
+
+  --nav-h:72px;
+  --maxw:1180px;
+  --maxw-nav:1300px;
+  --radius:4px;
+  --shadow-sm:0 1px 3px rgba(27,42,74,.08);
+  --shadow-md:0 14px 40px rgba(27,42,74,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ===================== RESET / BASE ===================== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  color:var(--gris-texto);
+  background:var(--blanco-hueso);
+  line-height:1.65;
+  font-size:17px;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;color:var(--azul-noche);line-height:1.15}
+section{scroll-margin-top:calc(var(--nav-h) + 8px)}
+:focus-visible{outline:3px solid var(--dorado);outline-offset:2px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.22em;color:var(--dorado);
+}
+.section{padding:96px 0}
+.section-head{max-width:680px;margin-bottom:48px}
+.section-head h2{font-size:clamp(2rem,4vw,2.85rem);margin:.4em 0 .3em}
+.section-head p{color:var(--gris-medio)}
+
+/* ===================== TOP STRIP ===================== */
+.topbar{
+  background:var(--azul-noche);color:#cfd6e6;
+  font-size:.74rem;letter-spacing:.02em;
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;min-height:36px;gap:12px;max-width:var(--maxw-nav)}
+.topbar p{display:flex;align-items:center;gap:8px}
+.topbar p i{color:var(--dorado)}
+.topbar .social{display:flex;gap:6px}
+.topbar .social a{
+  width:28px;height:28px;display:grid;place-items:center;
+  color:#cfd6e6;font-size:1rem;border-radius:50%;transition:color .2s var(--ease),background .2s var(--ease)
+}
+.topbar .social a:hover{color:var(--azul-noche);background:var(--dorado)}
+
+/* ===================== NAVBAR ===================== */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:var(--blanco);
+  border-bottom:2px solid var(--dorado);
+  box-shadow:var(--shadow-sm);
+}
+.nav-inner{display:flex;align-items:center;gap:14px;min-height:var(--nav-h);max-width:var(--maxw-nav);margin:0 auto;padding:0 24px}
+
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand .seal{width:44px;height:44px}
+.brand .brand-text{line-height:1.05}
+.brand .brand-text .n1{font-family:var(--serif);font-weight:700;font-size:1.08rem;color:var(--azul-noche);display:block}
+.brand .brand-text .n2{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris-medio)}
+
+/* main menu */
+.menu{display:flex;align-items:center;gap:0;margin:0 auto}
+.menu>li{position:relative}
+.menu>li>a,.menu>li>button{
+  display:flex;align-items:center;gap:5px;
+  padding:0 12px;height:var(--nav-h);
+  font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--azul-noche);position:relative;white-space:nowrap;
+}
+.menu>li>a .lock,.menu>li>button .lock{font-size:.82rem;color:var(--dorado)}
+.menu>li>a .caret,.menu>li>button .caret{font-size:.9rem;opacity:.7}
+.menu>li>a::after,.menu>li>button::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:18px;height:2px;
+  background:var(--dorado);transform:scaleX(0);transform-origin:center;transition:transform .25s var(--ease)
+}
+.menu>li:hover>a::after,.menu>li:hover>button::after,.menu>li:focus-within>a::after,.menu>li:focus-within>button::after{transform:scaleX(1)}
+
+/* mega panel */
+.mega{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  min-width:244px;background:var(--blanco);
+  border:1px solid var(--linea);border-top:3px solid var(--dorado);
+  box-shadow:var(--shadow-md);border-radius:0 0 var(--radius) var(--radius);
+  padding:10px;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s var(--ease),transform .22s var(--ease);z-index:5;
+}
+.menu>li:hover>.mega,.menu>li:focus-within>.mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.mega a{
+  display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:var(--radius);
+  font-size:.92rem;color:var(--gris-texto);transition:background .18s var(--ease),color .18s var(--ease)
+}
+.mega a:hover{background:var(--blanco-hueso);color:var(--azul-noche)}
+.mega a i{font-size:1.05rem;color:var(--dorado);width:20px;text-align:center}
+.mega .sub-label{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-medio);padding:10px 14px 4px}
+.mega .restricted-tag{display:flex;align-items:center;gap:7px;padding:8px 14px;margin-top:4px;font-size:.74rem;color:var(--rojo-oscuro);background:rgba(122,28,28,.06);border-radius:var(--radius)}
+.mega .restricted-tag i{color:var(--rojo-oscuro)}
+
+/* nav right */
+.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.search-trigger{
+  width:40px;height:40px;display:grid;place-items:center;border-radius:50%;
+  color:var(--azul-noche);font-size:1.2rem;transition:background .2s var(--ease)
+}
+.search-trigger:hover{background:var(--blanco-hueso)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  font-size:.8rem;font-weight:600;letter-spacing:.05em;
+  padding:11px 20px;border-radius:var(--radius);transition:all .22s var(--ease);
+}
+.btn-primary{background:var(--azul-noche);color:#fff}
+.btn-primary:hover{background:#243a66}
+.btn-outline{border:1.5px solid var(--dorado);color:var(--azul-noche)}
+.btn-outline:hover{background:var(--dorado);color:#fff}
+.btn-ghost-light{border:1.5px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.04)}
+.btn-ghost-light:hover{background:#fff;color:var(--azul-noche)}
+.btn-gold{background:var(--dorado);color:#fff}
+.btn-gold:hover{background:#a3842f}
+#authBtn{padding:10px 16px;font-size:.76rem}
+
+.hamburger{display:none;width:44px;height:44px;place-items:center;font-size:1.6rem;color:var(--azul-noche)}
+
+/* logout chip (hidden until authed) */
+.auth-chip{display:none}
+body.authed .auth-chip{display:inline-flex;align-items:center;gap:6px}
+body.authed .auth-login-label{display:none}
+.auth-login-label{display:inline-flex;align-items:center;gap:6px}
+
+/* ===================== HERO CAROUSEL ===================== */
+.hero{position:relative;min-height:100vh;background:var(--azul-noche);color:#fff;overflow:hidden}
+.carousel{position:absolute;inset:0;z-index:1}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.1s var(--ease),visibility 1.1s var(--ease)}
+.slide.active{opacity:1;visibility:visible}
+.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+/* slide gradients (placeholders — sustituir por background-image en fase 2) */
+.slide[data-i="0"] .bg{background:radial-gradient(circle at 50% 38%,rgba(184,151,58,.22),transparent 55%),linear-gradient(135deg,#22345c,#16233f)}
+.slide[data-i="1"] .bg{background:radial-gradient(circle at 70% 40%,rgba(184,151,58,.16),transparent 55%),linear-gradient(135deg,#2a2c4a,#16233f)}
+.slide[data-i="2"] .bg{background:radial-gradient(circle at 35% 45%,rgba(184,151,58,.16),transparent 55%),linear-gradient(135deg,#1d3a42,#16233f)}
+.slide[data-i="3"] .bg{background:radial-gradient(circle at 55% 38%,rgba(184,151,58,.24),transparent 55%),linear-gradient(135deg,#3a2f1f,#16233f)}
+.slide .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,74,.45) 0%,rgba(27,42,74,.62) 55%,rgba(27,42,74,.78) 100%)}
+.slide .pattern{position:absolute;inset:0;opacity:.5;background-image:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 1px,transparent 1px 22px),
+  repeating-linear-gradient(-45deg,rgba(255,255,255,.025) 0 1px,transparent 1px 22px)}
+.slide-art{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(360px,38vw);opacity:.1;color:#fff}
+.slide .caption{position:absolute;left:max(32px,5vw);bottom:96px;z-index:2;pointer-events:none;max-width:60%}
+.slide .caption .c-num{display:block;font-size:.72rem;font-weight:600;letter-spacing:.22em;color:var(--dorado-claro);margin-bottom:6px}
+.slide .caption .c-text{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,2.4vw,1.4rem);color:#fff}
+
+/* persistent overlay */
+.hero-inner{position:absolute;inset:0;z-index:3;display:grid;place-items:center;text-align:center;padding:120px 24px 110px;pointer-events:none}
+.hero-inner-in{max-width:760px;display:flex;flex-direction:column;align-items:center}
+.hero .seal-lg{width:150px;height:150px;margin-bottom:26px;filter:drop-shadow(0 0 26px rgba(184,151,58,.4))}
+.hero .hero-eyebrow{color:var(--dorado-claro);margin-bottom:18px}
+.hero h1{color:#fff;font-size:clamp(2.4rem,6.4vw,4.4rem);letter-spacing:.01em}
+.hero .motto{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--dorado-claro);margin:14px 0 34px;
+  position:relative;padding:0 0 20px;
+}
+.hero .motto::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:80px;height:1px;background:var(--dorado)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;pointer-events:auto}
+
+/* controls */
+.car-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:50px;height:50px;display:grid;place-items:center;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-size:1.5rem;transition:background .2s var(--ease),border-color .2s var(--ease)
+}
+.car-arrow:hover{background:var(--dorado);border-color:var(--dorado)}
+.car-arrow.prev{left:24px}
+.car-arrow.next{right:24px}
+.car-dots{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:5;display:flex;gap:11px}
+.car-dot{width:11px;height:11px;border-radius:50%;background:transparent;border:1.5px solid rgba(255,255,255,.6);transition:all .25s var(--ease)}
+.car-dot[aria-current="true"]{background:var(--dorado);border-color:var(--dorado);width:30px;border-radius:6px}
+
+/* ===================== SIGNATURE VERSE ===================== */
+.verse-spine{
+  position:fixed;top:50%;right:6px;transform:translateY(-50%);
+  writing-mode:vertical-rl;
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:.92rem;letter-spacing:.18em;
+  color:rgba(184,151,58,.55);
+  z-index:40;pointer-events:none;user-select:none;
+}
+.verse-spine .ref{font-style:normal;font-family:var(--sans);font-size:.66rem;letter-spacing:.3em;color:rgba(184,151,58,.7)}
+
+/* ===================== ABOUT / TIMELINE ===================== */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.about-text p{margin-bottom:18px;color:var(--gris-texto)}
+.about-text .lead{font-family:var(--serif);font-size:1.35rem;line-height:1.5;color:var(--azul-noche);margin-bottom:26px}
+.about-text .verse-quote{
+  border-left:3px solid var(--dorado);padding:6px 0 6px 20px;margin:26px 0;
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--azul-noche)
+}
+.about-text .verse-quote span{display:block;font-style:normal;font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris-medio);margin-top:8px}
+
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--dorado),var(--linea))}
+.tl-item{position:relative;padding:0 0 32px 6px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--blanco-hueso);border:3px solid var(--dorado)}
+.tl-item .year{font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--dorado);line-height:1}
+.tl-item .ev{font-weight:600;color:var(--azul-noche);margin-top:4px}
+.tl-item .ds{font-size:.92rem;color:var(--gris-medio);margin-top:2px}
+
+/* ===================== EVENTS ===================== */
+.events{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.events-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:42px}
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.event-card{
+  display:grid;grid-template-columns:84px 1fr;gap:18px;
+  border:1px solid var(--linea);border-radius:var(--radius);padding:22px;
+  background:var(--blanco-hueso);transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)
+}
+.event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--dorado)}
+.event-date{text-align:center;border-right:1px solid var(--linea);padding-right:14px}
+.event-date .d{font-family:var(--serif);font-weight:700;font-size:2.3rem;color:var(--dorado);line-height:.9}
+.event-date .m{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-medio);margin-top:6px}
+.event-date .y{font-size:.72rem;color:var(--gris-medio)}
+.event-body .tag{display:inline-block;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px}
+.tag.culto{background:rgba(184,151,58,.14);color:#7c6420}
+.tag.conferencia{background:rgba(27,42,74,.1);color:var(--azul-noche)}
+.tag.asamblea{background:rgba(122,28,28,.1);color:var(--rojo-oscuro)}
+.event-body h3{font-size:1.2rem;margin-bottom:6px}
+.event-body p{font-size:.92rem;color:var(--gris-medio);margin-bottom:12px}
+.event-meta{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--gris-medio);flex-wrap:wrap}
+.event-meta .place{display:flex;align-items:center;gap:5px}
+.event-meta .more{display:flex;align-items:center;gap:4px;color:var(--azul-noche);font-weight:600}
+.event-meta .more:hover{color:var(--dorado)}
+.events-foot{text-align:center;margin-top:42px}
+
+/* admin add-event (auth only) */
+.admin-bar{display:none;margin-bottom:26px}
+body.authed .admin-bar{display:flex;align-items:center;gap:12px;background:rgba(184,151,58,.1);border:1px dashed var(--dorado);padding:12px 18px;border-radius:var(--radius);flex-wrap:wrap}
+.admin-bar .tag-admin{display:flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;color:#7c6420}
+.admin-bar .tag-admin i{font-size:1rem}
+
+/* ===================== RESOURCES ===================== */
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.resource-card{
+  background:#fff;border:1px solid var(--linea);border-left:4px solid var(--dorado);
+  border-radius:var(--radius);padding:26px;transition:transform .25s var(--ease),box-shadow .25s var(--ease)
+}
+.resource-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.resource-card .ico{font-size:1.7rem;color:var(--dorado);margin-bottom:14px}
+.resource-card h3{font-size:1.15rem;margin-bottom:8px}
+.resource-card p{font-size:.9rem;color:var(--gris-medio);margin-bottom:16px;min-height:42px}
+.resource-card .rlink{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--azul-noche)}
+.resource-card .rlink:hover{color:var(--dorado)}
+
+/* ===================== COMMUNITY ===================== */
+.community{background:var(--azul-noche);color:#fff}
+.community h2{color:#fff}
+.community .section-head p{color:#aeb8cd}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:8px 0 56px}
+.stat{text-align:center;padding:24px 12px;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:rgba(255,255,255,.03)}
+.stat .num{font-family:var(--serif);font-weight:700;font-size:3rem;color:var(--dorado-claro);line-height:1}
+.stat .lab{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#aeb8cd;margin-top:10px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ph{
+  aspect-ratio:4/3;border-radius:var(--radius);display:grid;place-items:center;text-align:center;
+  color:rgba(255,255,255,.7);font-size:.78rem;letter-spacing:.05em;
+  border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden
+}
+.ph i{font-size:1.6rem;color:rgba(184,151,58,.8);display:block;margin-bottom:6px}
+.ph:nth-child(1){background:linear-gradient(135deg,#22345c,#1B2A4A)}
+.ph:nth-child(2){background:linear-gradient(135deg,#2b2233,#1B2A4A)}
+.ph:nth-child(3){background:linear-gradient(135deg,#1f3a3a,#1B2A4A)}
+.ph:nth-child(4){background:linear-gradient(135deg,#3a2e1f,#1B2A4A)}
+
+/* ===================== RESTRICTED (CRES / DIEZMOS) ===================== */
+.restricted{position:relative;background:#fff;border-top:1px solid var(--linea)}
+.restricted .inner-blur{transition:filter .4s var(--ease),opacity .4s var(--ease)}
+.restricted-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+.rcard{border:1px solid var(--linea);border-radius:var(--radius);padding:24px;background:var(--blanco-hueso)}
+.rcard i{font-size:1.5rem;color:var(--dorado);margin-bottom:12px}
+.rcard h3{font-size:1.1rem;margin-bottom:6px}
+.rcard p{font-size:.9rem;color:var(--gris-medio)}
+.lock-overlay{
+  position:absolute;inset:0;z-index:5;display:grid;place-items:center;text-align:center;padding:24px;
+  background:rgba(27,42,74,.86);color:#fff;backdrop-filter:blur(3px);
+  transition:opacity .4s var(--ease),visibility .4s var(--ease)
+}
+.lock-overlay .lock-ico{
+  width:74px;height:74px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;
+  border:2px solid var(--dorado);color:var(--dorado);font-size:2rem
+}
+.lock-overlay h3{color:#fff;font-size:1.5rem;margin-bottom:8px}
+.lock-overlay p{color:#cfd6e6;max-width:420px;margin:0 auto 22px}
+body.authed .restricted .lock-overlay{opacity:0;visibility:hidden}
+.restricted .inner-blur{filter:blur(5px);opacity:.55;pointer-events:none}
+body.authed .restricted .inner-blur{filter:none;opacity:1;pointer-events:auto}
+.unlocked-flag{display:none;align-items:center;gap:7px;font-size:.74rem;font-weight:600;color:#2f7d4f;background:rgba(47,125,79,.1);padding:5px 12px;border-radius:20px;margin-bottom:18px;width:max-content}
+body.authed .unlocked-flag{display:inline-flex}
+
+/* ===================== FOOTER ===================== */
+.footer{background:#15213b;color:#aeb8cd;padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:48px;padding-bottom:48px}
+.footer .fbrand{display:flex;gap:14px;align-items:flex-start}
+.footer .fbrand .seal{width:54px;height:54px;flex-shrink:0}
+.footer .fbrand .n1{font-family:var(--serif);color:#fff;font-size:1.15rem;line-height:1.2}
+.footer .fbrand .motto-sm{font-style:italic;font-family:var(--serif);color:var(--dorado-claro);font-size:.9rem;margin-top:8px}
+.footer h4{color:#fff;font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.footer ul li{margin-bottom:11px}
+.footer ul a{font-size:.92rem;transition:color .2s var(--ease)}
+.footer ul a:hover{color:var(--dorado-claro)}
+.footer .contact p{font-size:.92rem;margin-bottom:11px;display:flex;gap:9px;align-items:flex-start}
+.footer .contact i{color:var(--dorado);margin-top:3px}
+.fsocial{display:flex;gap:10px;margin-top:18px}
+.fsocial a{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.18);font-size:1.1rem;transition:all .2s var(--ease)}
+.fsocial a:hover{background:var(--dorado);border-color:var(--dorado);color:#fff}
+.footer-bar{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;text-align:center;font-size:.82rem;color:#8995ad}
+
+/* ===================== MODALS ===================== */
+.overlay{
+  position:fixed;inset:0;z-index:100;display:none;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(27,42,74,.6);backdrop-filter:blur(4px);
+}
+.overlay.open{display:flex;animation:fade .25s var(--ease)}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal{
+  background:#fff;width:100%;max-width:440px;border-radius:var(--radius);
+  border-top:4px solid var(--dorado);box-shadow:var(--shadow-md);
+  padding:40px 36px;position:relative;animation:rise .3s var(--ease)
+}
+@keyframes rise{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal .close{position:absolute;top:14px;right:14px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-size:1.3rem;color:var(--gris-medio);transition:background .2s var(--ease),color .2s var(--ease)}
+.modal .close:hover{background:var(--blanco-hueso);color:var(--azul-noche)}
+.modal .m-seal{width:54px;height:54px;margin:0 auto 16px}
+.modal h2{text-align:center;font-size:1.7rem;margin-bottom:6px}
+.modal .m-sub{text-align:center;color:var(--gris-medio);font-size:.9rem;margin-bottom:26px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--azul-noche);margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 14px;border:1.5px solid var(--linea);border-radius:var(--radius);
+  font-family:inherit;font-size:.95rem;color:var(--gris-texto);background:var(--blanco-hueso);transition:border-color .2s var(--ease),background .2s var(--ease)
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--dorado);background:#fff;outline:none}
+.field textarea{resize:vertical;min-height:84px}
+.modal .btn{width:100%;padding:13px}
+.modal .forgot{display:block;text-align:center;margin-top:16px;font-size:.86rem;color:var(--azul-noche)}
+.modal .forgot:hover{color:var(--dorado)}
+.modal-note{text-align:center;font-size:.74rem;color:var(--gris-medio);margin-top:18px;border-top:1px solid var(--linea);padding-top:14px}
+
+/* admin modal wider */
+#adminModal .modal{max-width:520px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.modal-actions{display:flex;gap:12px;margin-top:8px}
+.modal-actions .btn{flex:1}
+.btn-cancel{background:var(--blanco-hueso);color:var(--gris-texto);border:1.5px solid var(--linea)}
+.btn-cancel:hover{background:#ececec}
+
+/* search modal fullscreen */
+#searchOverlay{align-items:flex-start}
+#searchOverlay.open{background:var(--azul-noche-90)}
+.search-modal{width:100%;max-width:780px;margin-top:14vh;background:none;border:none;box-shadow:none;padding:0;animation:rise .3s var(--ease);position:relative}
+.search-modal .close{position:fixed;top:24px;right:24px;width:48px;height:48px;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.search-modal .close:hover{background:rgba(255,255,255,.12);color:#fff}
+.search-box{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--dorado);padding:10px 4px}
+.search-box i{font-size:1.8rem;color:var(--dorado)}
+.search-box input{flex:1;background:none;border:none;color:#fff;font-family:var(--serif);font-size:clamp(1.4rem,4vw,2.2rem);padding:8px 0}
+.search-box input::placeholder{color:rgba(255,255,255,.4)}
+.search-box input:focus{outline:none}
+.search-results{margin-top:28px}
+.search-results .rl-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado-claro);margin-bottom:14px}
+.search-results a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--radius);color:#dfe4ef;transition:background .18s var(--ease)}
+.search-results a:hover{background:rgba(255,255,255,.07)}
+.search-results a i{color:var(--dorado);font-size:1.2rem}
+.search-results a .st{font-weight:600;color:#fff}
+.search-results a .sd{font-size:.84rem;color:#aeb8cd}
+
+/* toast */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(120%);
+  background:var(--azul-noche);color:#fff;padding:14px 24px;border-radius:var(--radius);
+  border-left:3px solid var(--dorado);box-shadow:var(--shadow-md);z-index:120;
+  display:flex;align-items:center;gap:10px;font-size:.9rem;transition:transform .4s var(--ease)
+}
+.toast i{color:var(--dorado-claro)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===================== RESPONSIVE ===================== */
+/* Nav collapses to hamburger early to avoid overflow */
+@media (max-width:1199px){
+  .hamburger{display:grid}
+  .menu{
+    position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
+    flex-direction:column;align-items:stretch;gap:0;margin:0;
+    background:#fff;padding:8px 0 40px;overflow-y:auto;
+    transform:translateX(-100%);transition:transform .3s var(--ease);
+    box-shadow:var(--shadow-md);
+  }
+  body.nav-open .menu{transform:translateX(0)}
+  .menu>li{border-bottom:1px solid var(--linea)}
+  .menu>li>a,.menu>li>button{height:auto;padding:16px 24px;width:100%;justify-content:space-between;font-size:.84rem}
+  .menu>li>a::after,.menu>li>button::after{display:none}
+  .menu>li>button>.caret{margin-left:auto;transition:transform .25s var(--ease)}
+  .menu>li.open>button>.caret{transform:rotate(180deg)}
+  .mega{
+    position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;
+    box-shadow:none;border:none;border-top:none;min-width:0;padding:0 12px 12px;
+    max-height:0;overflow:hidden;transition:max-height .3s var(--ease)
+  }
+  .menu>li.open>.mega{max-height:640px}
+  .mega a{padding:11px 14px}
+}
+@media (max-width:1100px){
+  .verse-spine{display:none}
+}
+@media (max-width:980px){
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .event-grid{grid-template-columns:1fr 1fr}
+  .resource-grid{grid-template-columns:1fr 1fr}
+  .restricted-grid{grid-template-columns:1fr 1fr}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .slide-art{display:none}
+}
+@media (max-width:768px){
+  body{font-size:16px}
+  .section{padding:68px 0}
+  .auth-text{display:none}
+  #authBtn{padding:10px 12px}
+  .event-grid,.resource-grid,.restricted-grid,.stat-row,.gallery{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .field-row{grid-template-columns:1fr}
+  .car-arrow{width:42px;height:42px;font-size:1.3rem}
+  .car-arrow.prev{left:12px}.car-arrow.next{right:12px}
+  .slide .caption{bottom:84px;max-width:78%}
+  .hero-inner{padding:110px 20px 120px}
+}
+@media (max-width:520px){
+  .brand .brand-text .n2{display:none}
+  .car-arrow{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== SVG SEAL (reusable symbol) ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ipar-seal" viewBox="0 0 200 200">
+    <defs>
+      <path id="arcTop" d="M 38 100 A 62 62 0 0 1 162 100" fill="none"/>
+      <path id="arcBot" d="M 42 100 A 58 58 0 0 0 158 100" fill="none"/>
+    </defs>
+    <circle cx="100" cy="100" r="96" fill="var(--blanco-hueso)" stroke="var(--dorado)" stroke-width="2.5"/>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="var(--azul-noche)" stroke-width="1"/>
+    <circle cx="100" cy="100" r="62" fill="#fff" stroke="var(--dorado)" stroke-width="1.5"/>
+    <text fill="var(--azul-noche)" font-family="Inter,sans-serif" font-size="9.2" font-weight="600" letter-spacing="2.4">
+      <textPath href="#arcTop" startOffset="50%" text-anchor="middle">SÍNODO GENERAL IPAR</textPath>
+    </text>
+    <text fill="var(--azul-noche)" font-family="Inter,sans-serif" font-size="8.2" font-weight="600" letter-spacing="1.4">
+      <textPath href="#arcBot" startOffset="50%" text-anchor="middle">LA LUZ EN LAS TINIEBLAS RESPLANDECE</textPath>
+    </text>
+    <text x="18" y="104" fill="var(--dorado)" font-size="12" text-anchor="middle">✦</text>
+    <text x="182" y="104" fill="var(--dorado)" font-size="12" text-anchor="middle">✦</text>
+    <g stroke="var(--dorado)" stroke-width="1.4" opacity=".8">
+      <line x1="100" y1="44" x2="100" y2="56"/>
+      <line x1="84" y1="49" x2="89" y2="59"/>
+      <line x1="116" y1="49" x2="111" y2="59"/>
+      <line x1="72" y1="58" x2="80" y2="65"/>
+      <line x1="128" y1="58" x2="120" y2="65"/>
+    </g>
+    <path d="M100 58 C92 58 86 63 84 70 C90 67 95 67 99 70 C95 73 91 78 90 84 C96 80 102 79 108 82 C112 76 113 69 110 64 C107 60 104 58 100 58 Z" fill="var(--azul-noche)"/>
+    <circle cx="101" cy="63" r="1.7" fill="#fff"/>
+    <path d="M100 86 L116 91 L116 104 C116 113 109 120 100 124 C91 120 84 113 84 104 L84 91 Z" fill="none" stroke="var(--azul-noche)" stroke-width="1.6"/>
+    <line x1="100" y1="118" x2="100" y2="100" stroke="var(--azul-noche)" stroke-width="1.6"/>
+    <circle cx="100" cy="98" r="6.5" fill="none" stroke="var(--dorado)" stroke-width="1.6"/>
+    <circle cx="93" cy="103" r="4.2" fill="none" stroke="var(--dorado)" stroke-width="1.4"/>
+    <circle cx="107" cy="103" r="4.2" fill="none" stroke="var(--dorado)" stroke-width="1.4"/>
+    <path d="M108 122 C112 118 113 113 110 110 C108 108 105 109 105 112" fill="none" stroke="var(--dorado)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M64 132 C76 128 90 128 100 134 C110 128 124 128 136 132 L136 150 C124 146 110 146 100 152 C90 146 76 146 64 150 Z" fill="#fff" stroke="var(--azul-noche)" stroke-width="1.8"/>
+    <line x1="100" y1="134" x2="100" y2="152" stroke="var(--azul-noche)" stroke-width="1.4"/>
+    <g stroke="var(--dorado)" stroke-width="1" opacity=".9">
+      <line x1="72" y1="137" x2="94" y2="135"/>
+      <line x1="72" y1="142" x2="94" y2="140"/>
+      <line x1="106" y1="135" x2="128" y2="137"/>
+      <line x1="106" y1="140" x2="128" y2="142"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ========== TOPBAR ========== -->
+<div class="topbar">
+  <div class="wrap">
+    <p><i class="ti ti-church"></i> Sínodo General · Iglesia Presbiteriana Asociada Reformada de México A.R.</p>
+    <div class="social">
+      <a href="#" aria-label="Facebook del Sínodo IPAR"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Instagram del Sínodo IPAR"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="YouTube del Sínodo IPAR"><i class="ti ti-brand-youtube" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#inicio" class="brand" aria-label="Inicio — Sínodo General IPAR">
+      <svg class="seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+      <span class="brand-text">
+        <span class="n1">Sínodo General IPAR</span>
+        <span class="n2">Iglesia Presbiteriana Asociada Reformada</span>
+      </span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <ul class="menu" id="menu">
+        <li>
+          <button aria-expanded="false">IPAR <i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <a href="#ipar"><i class="ti ti-book-2"></i> Credo</a>
+            <a href="#ipar"><i class="ti ti-history"></i> Historia</a>
+            <a href="#ipar"><i class="ti ti-award"></i> 150 Aniversario</a>
+            <a href="#ipar"><i class="ti ti-map-pin"></i> Plan 2028–2033</a>
+            <a href="#ipar"><i class="ti ti-arrows-left-right"></i> Próximos · pasados</a>
+          </div>
+        </li>
+        <li>
+          <button aria-expanded="false">Difusión <i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <span class="sub-label">Calendario de actividades</span>
+            <a href="#difusion"><i class="ti ti-calendar-event"></i> Próximos eventos</a>
+            <a href="#difusion"><i class="ti ti-calendar-time"></i> Eventos pasados</a>
+          </div>
+        </li>
+        <li>
+          <button aria-expanded="false">Recursos <i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <a href="#recursos"><i class="ti ti-file-text"></i> Constitución</a>
+            <a href="#recursos"><i class="ti ti-book"></i> Confesión de Fe de Westminster</a>
+            <a href="#recursos"><i class="ti ti-gavel"></i> Reglas Parlamentarias</a>
+            <a href="#recursos"><i class="ti ti-scale"></i> Libro de Disciplina</a>
+            <a href="#recursos"><i class="ti ti-music"></i> Libro de Culto y Liturgia</a>
+            <a href="#recursos"><i class="ti ti-users"></i> Líderes</a>
+            <a href="#recursos"><i class="ti ti-heart"></i> Devocionales</a>
+            <a href="#recursos"><i class="ti ti-headphones"></i> Audio · Video · Links</a>
+            <a href="#recursos"><i class="ti ti-folder"></i> Materiales propios</a>
+            <a href="#recursos"><i class="ti ti-shield"></i> En defensa de la fe</a>
+          </div>
+        </li>
+        <li>
+          <button aria-expanded="false">Comunidad <i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <a href="#comunidad"><i class="ti ti-building-church"></i> Sínodos</a>
+            <a href="#comunidad"><i class="ti ti-hierarchy"></i> Presbiterios</a>
+            <a href="#comunidad"><i class="ti ti-home"></i> Iglesias</a>
+            <a href="#comunidad"><i class="ti ti-photo"></i> Galería</a>
+            <a href="#comunidad"><i class="ti ti-chart-bar"></i> Estadísticas</a>
+          </div>
+        </li>
+        <li>
+          <button aria-expanded="false">CRES <i class="ti ti-lock lock" aria-hidden="true"></i><i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <span class="sub-label">Acceso institucional</span>
+            <a href="#cres"><i class="ti ti-users-group"></i> Directiva</a>
+            <a href="#cres"><i class="ti ti-school"></i> Oferta Académica</a>
+            <a href="#cres"><i class="ti ti-file-certificate"></i> Convenios</a>
+            <a href="#cres"><i class="ti ti-building-bank"></i> Edinburgh</a>
+            <a href="#cres"><i class="ti ti-calendar"></i> Calendario Escolar</a>
+            <span class="restricted-tag"><i class="ti ti-lock"></i> Requiere iniciar sesión</span>
+          </div>
+        </li>
+        <li>
+          <button aria-expanded="false">Diezmos <i class="ti ti-lock lock" aria-hidden="true"></i><i class="ti ti-chevron-down caret" aria-hidden="true"></i></button>
+          <div class="mega">
+            <span class="sub-label">Acceso institucional</span>
+            <a href="#diezmos"><i class="ti ti-wallet"></i> Cuenta y correo</a>
+            <span class="restricted-tag"><i class="ti ti-lock"></i> Requiere iniciar sesión</span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="search-trigger" id="searchTrigger" aria-label="Abrir buscador"><i class="ti ti-search" aria-hidden="true"></i></button>
+      <button class="btn btn-primary" id="authBtn" aria-haspopup="dialog">
+        <span class="auth-login-label"><i class="ti ti-user" aria-hidden="true"></i> <span class="auth-text">Iniciar sesión</span></span>
+        <span class="auth-chip"><i class="ti ti-logout" aria-hidden="true"></i> <span class="auth-text">Cerrar sesión</span></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i class="ti ti-menu-2" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== SIGNATURE VERSE ========== -->
+<aside class="verse-spine" aria-hidden="true">
+  <span class="ref">JUAN 1:5</span> — La luz resplandece en las tinieblas
+</aside>
+
+<!-- ========== HERO CAROUSEL ========== -->
+<section class="hero" id="inicio" aria-roledescription="carrusel" aria-label="Imágenes destacadas del Sínodo">
+  <h1 class="sr-only">Sínodo General IPAR — Iglesia Presbiteriana Asociada Reformada de México A.R.</h1>
+
+  <div class="carousel" id="carousel">
+    <!-- Cada .slide es un placeholder de diseño. En fase 2, sustituir el degradado de .bg por background-image:url('foto.jpg') -->
+    <div class="slide active" data-i="0" aria-hidden="false" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
+      <div class="bg"></div><div class="pattern"></div><div class="scrim"></div>
+      <svg class="slide-art" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M100 18 v22 M89 29 h22"/><path d="M58 92 L100 52 L142 92 V172 H58 Z"/><path d="M88 172 v-42 a12 12 0 0 1 24 0 v42"/><circle cx="100" cy="84" r="9"/></g></svg>
+      <div class="caption"><span class="c-num">01 / 04</span><span class="c-text">Adoración congregacional</span></div>
+    </div>
+    <div class="slide" data-i="1" aria-hidden="true" role="group" aria-roledescription="diapositiva" aria-label="2 de 4">
+      <div class="bg"></div><div class="pattern"></div><div class="scrim"></div>
+      <svg class="slide-art" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="66" cy="74" r="15"/><path d="M42 132 a24 24 0 0 1 48 0"/><circle cx="134" cy="74" r="15"/><path d="M110 132 a24 24 0 0 1 48 0"/><circle cx="100" cy="62" r="18"/><path d="M70 128 a30 30 0 0 1 60 0"/></g></svg>
+      <div class="caption"><span class="c-num">02 / 04</span><span class="c-text">Vida en comunidad</span></div>
+    </div>
+    <div class="slide" data-i="2" aria-hidden="true" role="group" aria-roledescription="diapositiva" aria-label="3 de 4">
+      <div class="bg"></div><div class="pattern"></div><div class="scrim"></div>
+      <svg class="slide-art" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M40 112 C70 102 95 102 100 112 C105 102 130 102 160 112 L160 152 C130 142 105 142 100 152 C95 142 70 142 40 152 Z"/><path d="M100 112 V152"/><path d="M62 72 L100 58 L138 72 L100 86 Z"/><path d="M100 86 V98"/><path d="M122 78 V92 a22 9 0 0 1 -44 0 V78"/></g></svg>
+      <div class="caption"><span class="c-num">03 / 04</span><span class="c-text">Formación teológica · CRES</span></div>
+    </div>
+    <div class="slide" data-i="3" aria-hidden="true" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
+      <div class="bg"></div><div class="pattern"></div><div class="scrim"></div>
+      <svg class="slide-art" viewBox="0 0 200 200" aria-hidden="true"><text x="100" y="118" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="92" fill="currentColor">150</text><text x="100" y="146" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" letter-spacing="7" fill="currentColor">AÑOS</text></svg>
+      <div class="caption"><span class="c-num">04 / 04</span><span class="c-text">150 Aniversario — 1876 · 2026</span></div>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-inner-in">
+      <svg class="seal-lg" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+      <p class="eyebrow hero-eyebrow">Iglesia Presbiteriana Asociada Reformada de México A.R.</p>
+      <p class="motto">«La luz en las tinieblas resplandece»</p>
+      <div class="hero-cta">
+        <a href="#ipar" class="btn btn-gold">Conoce nuestra historia</a>
+        <a href="#difusion" class="btn btn-ghost-light"><i class="ti ti-calendar-event" aria-hidden="true"></i> Ver calendario</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="car-arrow prev" id="carPrev" aria-label="Imagen anterior"><i class="ti ti-chevron-left" aria-hidden="true"></i></button>
+  <button class="car-arrow next" id="carNext" aria-label="Imagen siguiente"><i class="ti ti-chevron-right" aria-hidden="true"></i></button>
+  <div class="car-dots" id="carDots" role="tablist" aria-label="Seleccionar imagen">
+    <button class="car-dot" data-go="0" role="tab" aria-current="true" aria-label="Ir a la imagen 1"></button>
+    <button class="car-dot" data-go="1" role="tab" aria-current="false" aria-label="Ir a la imagen 2"></button>
+    <button class="car-dot" data-go="2" role="tab" aria-current="false" aria-label="Ir a la imagen 3"></button>
+    <button class="car-dot" data-go="3" role="tab" aria-current="false" aria-label="Ir a la imagen 4"></button>
+  </div>
+</section>
+
+<!-- ========== QUIÉNES SOMOS / IPAR ========== -->
+<section class="section" id="ipar">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2 style="font-size:clamp(2rem,4vw,2.85rem);margin:.3em 0 .5em">Una fe reformada con raíz histórica</h2>
+      <p class="lead">El Sínodo General congrega a presbiterios e iglesias unidas por una misma confesión: la suficiencia de la Escritura y la soberanía de Dios sobre toda la vida.</p>
+      <p>Heredera de la tradición reformada que llegó a México en el siglo XIX, la IPAR sostiene su gobierno presbiteriano, su adhesión a la Confesión de Fe de Westminster y su compromiso con la predicación fiel de la Palabra en cada congregación del país.</p>
+      <p>Nuestro trabajo se ordena alrededor de tres convicciones: una doctrina firme, una comunidad que se cuida mutuamente y un testimonio que alcanza a la siguiente generación.</p>
+      <blockquote class="verse-quote">
+        «En él estaba la vida, y la vida era la luz de los hombres.»
+        <span>Juan 1:4 — Reina-Valera</span>
+      </blockquote>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow" style="margin-bottom:24px">Hitos de nuestra historia</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="year">1872</div>
+          <div class="ev">Llegada del presbiterianismo a México</div>
+          <div class="ds">Los primeros misioneros reformados establecen congregaciones en territorio nacional.</div>
+        </div>
+        <div class="tl-item">
+          <div class="year">1901</div>
+          <div class="ev">Fundación del Sínodo General</div>
+          <div class="ds">Se constituye el cuerpo de gobierno que reúne a los presbiterios del país.</div>
+        </div>
+        <div class="tl-item">
+          <div class="year">2026</div>
+          <div class="ev">150 Aniversario</div>
+          <div class="ds">Un siglo y medio de testimonio reformado, celebrado a lo largo del año litúrgico.</div>
+        </div>
+        <div class="tl-item">
+          <div class="year">2028</div>
+          <div class="ev">Plan estratégico 2028–2033</div>
+          <div class="ds">Hoja de ruta para la formación, la plantación de iglesias y la diaconía.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIFUSIÓN / EVENTOS ========== -->
+<section class="section events" id="difusion">
+  <div class="wrap">
+    <div class="events-head reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">Difusión · Calendario de actividades</p>
+        <h2>Próximos eventos</h2>
+      </div>
+    </div>
+
+    <div class="admin-bar reveal">
+      <span class="tag-admin"><i class="ti ti-shield-lock"></i> Modo administrador (sesión simulada)</span>
+      <button class="btn btn-gold" id="newEventBtn"><i class="ti ti-plus" aria-hidden="true"></i> Nuevo evento</button>
+    </div>
+
+    <div class="event-grid reveal">
+      <article class="event-card">
+        <div class="event-date"><div class="d">14</div><div class="m">Mar</div><div class="y">2026</div></div>
+        <div class="event-body">
+          <span class="tag asamblea">Asamblea</span>
+          <h3>Asamblea General Ordinaria</h3>
+          <p>Reunión anual de delegados de los presbiterios para deliberar sobre la vida del Sínodo.</p>
+          <div class="event-meta">
+            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Templo Central, CDMX</span>
+            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="event-date"><div class="d">02</div><div class="m">May</div><div class="y">2026</div></div>
+        <div class="event-body">
+          <span class="tag conferencia">Conferencia</span>
+          <h3>Sola Scriptura: la suficiencia de la Palabra</h3>
+          <p>Jornada de formación teológica para ministros, ancianos y diáconos de las iglesias.</p>
+          <div class="event-meta">
+            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Seminario CRES</span>
+            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="event-date"><div class="d">19</div><div class="m">Jul</div><div class="y">2026</div></div>
+        <div class="event-body">
+          <span class="tag culto">Culto</span>
+          <h3>Culto de Acción de Gracias · 150 Aniversario</h3>
+          <p>Servicio conmemorativo por el siglo y medio de testimonio reformado en México.</p>
+          <div class="event-meta">
+            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Catedral Reformada</span>
+            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="events-foot reveal">
+      <a href="#difusion" class="btn btn-outline">Ver todos los eventos del calendario</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RECURSOS ========== -->
+<section class="section" id="recursos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Biblioteca institucional</p>
+      <h2>Recursos para la iglesia</h2>
+      <p>Documentos confesionales, normativos y devocionales al servicio de las congregaciones del Sínodo.</p>
+    </div>
+    <div class="resource-grid reveal">
+      <article class="resource-card">
+        <i class="ti ti-file-text ico" aria-hidden="true"></i>
+        <h3>Constitución</h3>
+        <p>Marco fundamental que rige el gobierno y la organización del Sínodo General.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-book ico" aria-hidden="true"></i>
+        <h3>Confesión de Fe</h3>
+        <p>La Confesión de Fe de Westminster, norma doctrinal subordinada a la Escritura.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-gavel ico" aria-hidden="true"></i>
+        <h3>Reglas Parlamentarias</h3>
+        <p>Procedimiento ordenado para asambleas, presbiterios y consistorios.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-music ico" aria-hidden="true"></i>
+        <h3>Libro de Culto y Liturgia</h3>
+        <p>Orden de los servicios, salmos y formas litúrgicas para la adoración pública.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-heart ico" aria-hidden="true"></i>
+        <h3>Devocionales</h3>
+        <p>Meditaciones diarias y guías de estudio bíblico para familias e individuos.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-shield ico" aria-hidden="true"></i>
+        <h3>En defensa de la fe</h3>
+        <p>Materiales apologéticos para responder con gracia y firmeza al pensamiento actual.</p>
+        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMUNIDAD ========== -->
+<section class="section community" id="comunidad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Comunidad</p>
+      <h2>Una iglesia nacional</h2>
+      <p>El Sínodo reúne presbiterios e iglesias a lo largo del país, unidos en doctrina, gobierno y misión.</p>
+    </div>
+    <div class="stat-row reveal">
+      <div class="stat"><div class="num" data-count="3">3</div><div class="lab">Sínodos</div></div>
+      <div class="stat"><div class="num" data-count="12">12</div><div class="lab">Presbiterios</div></div>
+      <div class="stat"><div class="num" data-count="148">148</div><div class="lab">Iglesias</div></div>
+      <div class="stat"><div class="num" data-count="9500">9,500</div><div class="lab">Miembros activos</div></div>
+    </div>
+    <div class="gallery reveal">
+      <div class="ph"><span><i class="ti ti-photo" aria-hidden="true"></i>Foto de la comunidad</span></div>
+      <div class="ph"><span><i class="ti ti-photo" aria-hidden="true"></i>Foto de la comunidad</span></div>
+      <div class="ph"><span><i class="ti ti-photo" aria-hidden="true"></i>Foto de la comunidad</span></div>
+      <div class="ph"><span><i class="ti ti-photo" aria-hidden="true"></i>Foto de la comunidad</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CRES (restringido) ========== -->
+<section class="section restricted" id="cres">
+  <div class="wrap inner-blur">
+    <div class="section-head">
+      <span class="unlocked-flag"><i class="ti ti-lock-open" aria-hidden="true"></i> Acceso concedido</span>
+      <p class="eyebrow">CRES · Centro Reformado de Estudios</p>
+      <h2>Formación teológica</h2>
+      <p>Programas académicos, convenios y vida estudiantil del seminario del Sínodo.</p>
+    </div>
+    <div class="restricted-grid">
+      <div class="rcard"><i class="ti ti-users-group" aria-hidden="true"></i><h3>Directiva</h3><p>Cuerpo docente y administrativo del centro.</p></div>
+      <div class="rcard"><i class="ti ti-school" aria-hidden="true"></i><h3>Oferta Académica</h3><p>Programas de grado y formación continua.</p></div>
+      <div class="rcard"><i class="ti ti-file-certificate" aria-hidden="true"></i><h3>Convenios</h3><p>Acuerdos con instituciones reformadas.</p></div>
+      <div class="rcard"><i class="ti ti-building-bank" aria-hidden="true"></i><h3>Edinburgh</h3><p>Programa de intercambio internacional.</p></div>
+      <div class="rcard"><i class="ti ti-calendar" aria-hidden="true"></i><h3>Calendario Escolar</h3><p>Fechas del ciclo académico vigente.</p></div>
+    </div>
+  </div>
+  <div class="lock-overlay">
+    <div>
+      <div class="lock-ico"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <h3>Sección exclusiva</h3>
+      <p>Esta sección es exclusiva para miembros registrados del Sínodo.</p>
+      <button class="btn btn-gold open-login"><i class="ti ti-user" aria-hidden="true"></i> Iniciar sesión para acceder</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIEZMOS (restringido) ========== -->
+<section class="section restricted" id="diezmos" style="background:var(--blanco-hueso)">
+  <div class="wrap inner-blur">
+    <div class="section-head">
+      <span class="unlocked-flag"><i class="ti ti-lock-open" aria-hidden="true"></i> Acceso concedido</span>
+      <p class="eyebrow">Diezmos y ofrendas</p>
+      <h2>Mayordomía fiel</h2>
+      <p>Datos de cuenta y contacto para el envío de diezmos y ofrendas de las iglesias.</p>
+    </div>
+    <div class="restricted-grid">
+      <div class="rcard"><i class="ti ti-wallet" aria-hidden="true"></i><h3>Cuenta institucional</h3><p>Datos bancarios para transferencias del Sínodo.</p></div>
+      <div class="rcard"><i class="ti ti-mail" aria-hidden="true"></i><h3>Correo de tesorería</h3><p>Contacto directo con la administración financiera.</p></div>
+      <div class="rcard"><i class="ti ti-receipt" aria-hidden="true"></i><h3>Comprobantes</h3><p>Registro y constancia de aportaciones.</p></div>
+    </div>
+  </div>
+  <div class="lock-overlay">
+    <div>
+      <div class="lock-ico"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <h3>Sección exclusiva</h3>
+      <p>Esta sección es exclusiva para miembros registrados del Sínodo.</p>
+      <button class="btn btn-gold open-login"><i class="ti ti-user" aria-hidden="true"></i> Iniciar sesión para acceder</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="fbrand">
+        <svg class="seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+        <div>
+          <div class="n1">Sínodo General IPAR</div>
+          <p class="motto-sm">«La luz en las tinieblas resplandece»</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#ipar">IPAR</a></li>
+        <li><a href="#difusion">Difusión</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="contact" id="contacto">
+      <h4>Contacto institucional</h4>
+      <p><i class="ti ti-map-pin" aria-hidden="true"></i> Oficinas del Sínodo General, Ciudad de México</p>
+      <p><i class="ti ti-mail" aria-hidden="true"></i> contacto@sinodoipar.org.mx</p>
+      <p><i class="ti ti-phone" aria-hidden="true"></i> +52 (55) 0000 0000</p>
+      <div class="fsocial">
+        <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+        <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">© 2026 Sínodo General IPAR — Todos los derechos reservados</div>
+</footer>
+
+<!-- ========== SEARCH MODAL ========== -->
+<div class="overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Buscador del sitio">
+  <div class="search-modal">
+    <button class="close" data-close aria-label="Cerrar buscador"><i class="ti ti-x" aria-hidden="true"></i></button>
+    <div class="search-box">
+      <i class="ti ti-search" aria-hidden="true"></i>
+      <input type="text" id="searchInput" placeholder="Buscar en el Sínodo IPAR..." aria-label="Texto de búsqueda">
+    </div>
+    <div class="search-results">
+      <p class="rl-label">Resultados sugeridos</p>
+      <a href="#recursos"><i class="ti ti-book" aria-hidden="true"></i><span><span class="st">Confesión de Fe de Westminster</span><span class="sd"> · Recursos</span></span></a>
+      <a href="#difusion"><i class="ti ti-calendar-event" aria-hidden="true"></i><span><span class="st">Asamblea General Ordinaria 2026</span><span class="sd"> · Difusión</span></span></a>
+      <a href="#ipar"><i class="ti ti-history" aria-hidden="true"></i><span><span class="st">Historia y 150 Aniversario</span><span class="sd"> · IPAR</span></span></a>
+      <a href="#comunidad"><i class="ti ti-chart-bar" aria-hidden="true"></i><span><span class="st">Estadísticas de la comunidad</span><span class="sd"> · Comunidad</span></span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LOGIN MODAL ========== -->
+<div class="overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="modal">
+    <button class="close" data-close aria-label="Cerrar"><i class="ti ti-x" aria-hidden="true"></i></button>
+    <svg class="m-seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+    <h2 id="loginTitle">Iniciar sesión</h2>
+    <p class="m-sub">Acceso para miembros registrados del Sínodo</p>
+    <div class="field">
+      <label for="loginEmail">Correo electrónico</label>
+      <input type="email" id="loginEmail" placeholder="nombre@iglesia.org.mx" autocomplete="email">
+    </div>
+    <div class="field">
+      <label for="loginPass">Contraseña</label>
+      <input type="password" id="loginPass" placeholder="********" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" id="loginSubmit">Entrar</button>
+    <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+    <p class="modal-note">Maqueta visual — el acceso es simulado, sin validación real.</p>
+  </div>
+</div>
+
+<!-- ========== ADMIN EVENT MODAL ========== -->
+<div class="overlay" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+  <div class="modal">
+    <button class="close" data-close aria-label="Cerrar"><i class="ti ti-x" aria-hidden="true"></i></button>
+    <h2 id="adminTitle" style="font-size:1.5rem">Crear nuevo evento</h2>
+    <p class="m-sub">Panel de administrador · calendario de actividades</p>
+    <div class="field">
+      <label for="evTitle">Título</label>
+      <input type="text" id="evTitle" placeholder="Nombre del evento">
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="evDate">Fecha</label>
+        <input type="date" id="evDate">
+      </div>
+      <div class="field">
+        <label for="evType">Tipo</label>
+        <select id="evType">
+          <option>Culto</option>
+          <option>Conferencia</option>
+          <option>Asamblea</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="evPlace">Lugar</label>
+      <input type="text" id="evPlace" placeholder="Sede del evento">
+    </div>
+    <div class="field">
+      <label for="evDesc">Descripción</label>
+      <textarea id="evDesc" placeholder="Descripción breve del evento"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-cancel" data-close>Cancelar</button>
+      <button class="btn btn-gold" id="evSave"><i class="ti ti-device-floppy" aria-hidden="true"></i> Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOAST ========== -->
+<div class="toast" id="toast"><i class="ti ti-circle-check" aria-hidden="true"></i><span id="toastMsg"></span></div>
+
+<script>
+(function(){
+  "use strict";
+  const body = document.body;
+  const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let lastFocus = null;
+
+  /* ---------- Modal helpers ---------- */
+  function openModal(id){
+    const ov = document.getElementById(id);
+    if(!ov) return;
+    lastFocus = document.activeElement;
+    ov.classList.add('open');
+    const f = ov.querySelector('input,select,textarea,button:not([data-close])');
+    if(f) setTimeout(function(){ f.focus(); }, 60);
+  }
+  function closeModal(ov){
+    ov.classList.remove('open');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('.overlay').forEach(function(ov){
+    ov.addEventListener('click', function(e){ if(e.target === ov) closeModal(ov); });
+    ov.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', function(){ closeModal(ov); }); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.overlay.open').forEach(closeModal);
+      if(body.classList.contains('nav-open')) toggleNav(false);
+    }
+  });
+
+  /* ---------- Search ---------- */
+  document.getElementById('searchTrigger').addEventListener('click', function(){ openModal('searchOverlay'); });
+
+  /* ---------- Auth (simulated) ---------- */
+  const authBtn = document.getElementById('authBtn');
+  function setAuth(state){
+    if(state){
+      body.classList.add('authed');
+      authBtn.setAttribute('aria-label','Cerrar sesión');
+      showToast('Sesión iniciada — secciones desbloqueadas');
+    } else {
+      body.classList.remove('authed');
+      authBtn.setAttribute('aria-label','Iniciar sesión');
+      showToast('Sesión cerrada');
+    }
+  }
+  authBtn.addEventListener('click', function(){
+    if(body.classList.contains('authed')) setAuth(false);
+    else openModal('loginOverlay');
+  });
+  document.getElementById('loginSubmit').addEventListener('click', function(){
+    closeModal(document.getElementById('loginOverlay'));
+    setAuth(true);
+  });
+  document.querySelectorAll('.open-login').forEach(function(b){ b.addEventListener('click', function(){ openModal('loginOverlay'); }); });
+
+  /* ---------- Admin event ---------- */
+  document.getElementById('newEventBtn').addEventListener('click', function(){ openModal('adminModal'); });
+  document.getElementById('evSave').addEventListener('click', function(){
+    closeModal(document.getElementById('adminModal'));
+    showToast('Evento guardado (simulación)');
+  });
+
+  /* ---------- Toast ---------- */
+  let toastTimer;
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2800);
+  }
+
+  /* ---------- Mobile nav ---------- */
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  function toggleNav(force){
+    const open = (force !== undefined) ? force : !body.classList.contains('nav-open');
+    body.classList.toggle('nav-open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.querySelector('i').className = open ? 'ti ti-x' : 'ti ti-menu-2';
+  }
+  hamburger.addEventListener('click', function(){ toggleNav(); });
+
+  const mq = window.matchMedia('(max-width:1199px)');
+  menu.querySelectorAll(':scope > li > button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      if(!mq.matches) return;
+      e.preventDefault();
+      const li = btn.parentElement;
+      const wasOpen = li.classList.contains('open');
+      menu.querySelectorAll(':scope > li').forEach(function(x){
+        x.classList.remove('open');
+        const b = x.querySelector(':scope > button');
+        if(b) b.setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){ li.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  menu.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ if(mq.matches) toggleNav(false); });
+  });
+
+  /* ---------- Hero carousel ---------- */
+  (function(){
+    const root = document.getElementById('carousel');
+    if(!root) return;
+    const slides = Array.prototype.slice.call(root.querySelectorAll('.slide'));
+    const dots = Array.prototype.slice.call(document.querySelectorAll('#carDots .car-dot'));
+    let idx = 0, timer = null, delay = 6000;
+
+    function go(n){
+      n = (n + slides.length) % slides.length;
+      slides[idx].classList.remove('active');
+      slides[idx].setAttribute('aria-hidden','true');
+      dots[idx].setAttribute('aria-current','false');
+      idx = n;
+      slides[idx].classList.add('active');
+      slides[idx].setAttribute('aria-hidden','false');
+      dots[idx].setAttribute('aria-current','true');
+    }
+    function next(){ go(idx + 1); }
+    function prev(){ go(idx - 1); }
+    function play(){ if(reduce) return; stop(); timer = setInterval(next, delay); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    document.getElementById('carNext').addEventListener('click', function(){ next(); play(); });
+    document.getElementById('carPrev').addEventListener('click', function(){ prev(); play(); });
+    dots.forEach(function(d){
+      d.addEventListener('click', function(){ go(parseInt(d.dataset.go,10)); play(); });
+    });
+
+    // keyboard when focus is inside the hero
+    document.querySelector('.hero').addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ next(); play(); }
+      else if(e.key === 'ArrowLeft'){ prev(); play(); }
+    });
+
+    // pause on hover / focus
+    root.parentElement.addEventListener('mouseenter', stop);
+    root.parentElement.addEventListener('mouseleave', play);
+    root.parentElement.addEventListener('focusin', stop);
+    root.parentElement.addEventListener('focusout', play);
+
+    // touch swipe
+    let x0 = null;
+    root.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+    root.addEventListener('touchend', function(e){
+      if(x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if(Math.abs(dx) > 45){ if(dx < 0) next(); else prev(); play(); }
+      x0 = null;
+    }, {passive:true});
+
+    play();
+  })();
+
+  /* ---------- Scroll reveal ---------- */
+  if(!reduce && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Count-up for community stats ---------- */
+  if(!reduce && 'IntersectionObserver' in window){
+    const fmt = function(n){ return n.toLocaleString('es-MX'); };
+    const cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        const el = en.target, target = parseInt(el.dataset.count,10), dur = 1100, t0 = performance.now();
+        function step(now){
+          const p = Math.min((now - t0)/dur, 1);
+          el.textContent = fmt(Math.floor(p*p*(3-2*p)*target));
+          if(p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
+        }
+        requestAnimationFrame(step);
+        cio.unobserve(el);
+      });
+    }, {threshold:.5});
+    document.querySelectorAll('.num[data-count]').forEach(function(el){ cio.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
