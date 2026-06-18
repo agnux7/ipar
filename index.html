@@ -8,7 +8,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
 <style>
@@ -152,8 +154,8 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .btn-outline:hover{background:var(--dorado);color:#fff}
 .btn-ghost-light{border:1.5px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.04)}
 .btn-ghost-light:hover{background:#fff;color:var(--azul-noche)}
-.btn-gold{background:var(--dorado);color:#fff}
-.btn-gold:hover{background:#a3842f}
+.btn-gold{background:#7c6118;color:#fff}
+.btn-gold:hover{background:#5e4912}
 #authBtn{padding:10px 16px;font-size:.76rem}
 
 .hamburger{display:none;width:44px;height:44px;place-items:center;font-size:1.6rem;color:var(--azul-noche)}
@@ -646,7 +648,7 @@ body.authed .unlocked-flag{display:inline-flex}
 
     <div class="nav-actions">
       <button class="search-trigger" id="searchTrigger" aria-label="Abrir buscador"><i class="ti ti-search" aria-hidden="true"></i></button>
-      <button class="btn btn-primary" id="authBtn" aria-haspopup="dialog">
+      <button class="btn btn-primary" id="authBtn" aria-haspopup="dialog" aria-label="Iniciar sesión">
         <span class="auth-login-label"><i class="ti ti-user" aria-hidden="true"></i> <span class="auth-text">Iniciar sesión</span></span>
         <span class="auth-chip"><i class="ti ti-logout" aria-hidden="true"></i> <span class="auth-text">Cerrar sesión</span></span>
       </button>
