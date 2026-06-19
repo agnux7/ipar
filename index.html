@@ -455,18 +455,34 @@ body.authed .unlocked-flag{display:inline-flex}
   .menu>li>a::after,.menu>li>button::after{display:none}
   .menu>li>button>.caret{margin-left:auto;transition:transform .25s var(--ease)}
   .menu>li.open>button>.caret{transform:rotate(180deg)}
-  /* anula el comportamiento de hover/foco del escritorio (evita que el submenú se salga) */
+  /* mega colapsado */
   .mega,
   .menu>li:hover>.mega,
   .menu>li:focus-within>.mega{
     position:static;left:auto;transform:none;
     opacity:1;visibility:visible;pointer-events:auto;
-    box-shadow:none;border:none;border-top:none;min-width:0;padding:0 12px;
-    max-height:0;overflow:hidden;transition:max-height .3s var(--ease)
+    box-shadow:none;border:none;border-top:none;min-width:0;
+    padding:0;max-height:0;overflow:hidden;
+    transition:max-height .3s var(--ease),padding .3s var(--ease);
+    background:#fff;
   }
-  .menu>li.open>.mega{max-height:680px;padding:0 12px 10px}
-  .mega a{padding:11px 14px}
-  .mega .sub-label{padding:10px 14px 4px}
+  /* mega abierto */
+  .menu>li.open>.mega{
+    max-height:600px;
+    padding:4px 0 12px;
+    overflow:hidden;
+  }
+  /* fuerza visibilidad del contenido cuando está abierto */
+  .menu>li.open>.mega a,
+  .menu>li.open>.mega .sub-label,
+  .menu>li.open>.mega .restricted-tag{
+    visibility:visible;
+    opacity:1;
+  }
+  .mega a{padding:11px 24px;color:var(--gris-texto)}
+  .mega a i{width:22px;text-align:center}
+  .mega .sub-label{padding:10px 24px 4px}
+  .mega .restricted-tag{margin:4px 12px 0;font-size:.78rem}
 }
 @media (min-width:1200px){
   .nav-backdrop{display:none}
