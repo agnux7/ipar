@@ -13,6 +13,10 @@ Esta es la **fase 1**: una maqueta visual estática e interactiva, sin backend n
 ```
 sinodo-ipar/
 ├── index.html      # Sitio completo y autocontenido (HTML + CSS + JS)
+├── img/
+│   ├── sello-ipar.png       # Sello oficial del Sínodo (fondo transparente)
+│   ├── favicon-32.png       # Ícono de pestaña
+│   └── apple-touch-icon.png # Ícono para iOS
 └── README.md       # Este archivo
 ```
 
@@ -25,7 +29,7 @@ Todo el sitio vive en un solo archivo `index.html`: el CSS está embebido en `<s
 - HTML, CSS y JavaScript vanilla (sin frameworks ni librerías de JS).
 - **Tipografía:** Playfair Display + Inter (Google Fonts, vía CDN).
 - **Íconos:** Tabler Icons webfont (vía CDN).
-- **Imágenes:** no hay archivos externos; los placeholders son SVG inline y degradados CSS.
+- **Imágenes:** el sello oficial vive en `img/`; el resto de los placeholders son SVG inline y degradados CSS.
 
 ---
 
@@ -71,6 +75,8 @@ Para dominio propio: **Project → Settings → Domains** en Vercel.
 - Modal de búsqueda a pantalla completa (resultados simulados).
 - **Inicio de sesión simulado** (sin validación): al "entrar" se desbloquean visualmente las secciones **CRES** y **Diezmos** y aparece el panel de administrador de eventos.
 - Modal "Crear nuevo evento" (panel de administrador, sin guardar datos reales).
+- **Fechador:** la barra superior muestra la fecha actual en español y se repinta al cruzar la medianoche.
+- **Contador de visitas** en el pie. En esta fase se guarda en `localStorage`, así que cuenta las visitas **de cada navegador**, no el total global del sitio; para un total real hace falta backend (fase 2).
 - Scroll suave, conteo animado de estadísticas y revelado al hacer scroll.
 - Accesibilidad: navegación por teclado, `aria-label` en controles, foco visible y soporte de `prefers-reduced-motion`.
 
@@ -83,12 +89,12 @@ Estos valores son **de muestra** y deben sustituirse por datos oficiales:
 - **Estadísticas de Comunidad:** Sínodos / Presbiterios / Iglesias / Miembros (atributo `data-count`).
 - **Contacto del footer:** dirección, correo y teléfono.
 - **Línea de tiempo (sección IPAR):** confirmar fechas y redacción con el archivo histórico.
-- **Eventos:** las tres tarjetas de ejemplo del calendario.
+- **Eventos:** la *III Reunión ordinaria de Sínodo General* (17–19 sep 2026, Río Verde, SLP) es real; las otras tres tarjetas siguen siendo de ejemplo y dos de ellas ya quedaron en el pasado.
 - **Fotografías del carrusel:** cada diapositiva es un placeholder. Para usar fotos reales, sustituye el degradado de `.bg` por una imagen:
   ```css
   .slide[data-i="0"] .bg{ background:url('img/adoracion.jpg') center/cover; }
   ```
-- **Logo:** el sello es una interpretación estilizada en SVG, no el sello oficial exacto.
+- **Fechas históricas:** la IPAR inicia en **1879** y cumple **150 años en 2029**; el resto de los hitos de la línea de tiempo (1901, 2028) sigue siendo de muestra.
 
 ---
 

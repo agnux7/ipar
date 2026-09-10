@@ -6,6 +6,9 @@
 <title>Sínodo General IPAR · Iglesia Presbiteriana Asociada Reformada de México A.R.</title>
 <meta name="description" content="Sitio oficial del Sínodo General de la Iglesia Presbiteriana Asociada Reformada de México A.R. — La luz en las tinieblas resplandece.">
 
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#1B2A4A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap">
@@ -83,6 +86,8 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
   color:#cfd6e6;font-size:1rem;border-radius:50%;transition:color .2s var(--ease),background .2s var(--ease)
 }
 .topbar .social a:hover{color:var(--azul-noche);background:var(--dorado)}
+.topbar .tb-date{color:#e6ebf5;font-weight:500;white-space:nowrap}
+.topbar .tb-date time::first-letter{text-transform:uppercase}
 
 /* ===================== NAVBAR ===================== */
 .nav{
@@ -94,7 +99,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .nav-inner{display:flex;align-items:center;gap:14px;min-height:var(--nav-h);max-width:var(--maxw-nav);margin:0 auto;padding:0 24px}
 
 .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-.brand .seal{width:44px;height:44px}
+.brand .seal{height:44px;width:auto}
 .brand .brand-text{line-height:1.05}
 .brand .brand-text .n1{font-family:var(--serif);font-weight:700;font-size:1.08rem;color:var(--azul-noche);display:block}
 .brand .brand-text .n2{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gris-medio)}
@@ -189,7 +194,7 @@ body.authed .auth-login-label{display:none}
 /* persistent overlay */
 .hero-inner{position:absolute;inset:0;z-index:3;display:grid;place-items:center;text-align:center;padding:120px 24px 110px;pointer-events:none}
 .hero-inner-in{max-width:760px;display:flex;flex-direction:column;align-items:center}
-.hero .seal-lg{width:150px;height:150px;margin-bottom:26px;filter:drop-shadow(0 0 26px rgba(184,151,58,.4))}
+.hero .seal-lg{height:150px;width:auto;margin-bottom:26px;filter:drop-shadow(0 0 26px rgba(184,151,58,.4))}
 .hero .hero-eyebrow{color:var(--dorado-claro);margin-bottom:18px}
 .hero h1{color:#fff;font-size:clamp(2.4rem,6.4vw,4.4rem);letter-spacing:.01em}
 .hero .motto{
@@ -258,6 +263,9 @@ body.authed .auth-login-label{display:none}
 .event-date .d{font-family:var(--serif);font-weight:700;font-size:2.3rem;color:var(--dorado);line-height:.9}
 .event-date .m{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris-medio);margin-top:6px}
 .event-date .y{font-size:.72rem;color:var(--gris-medio)}
+.event-date.range .d{font-size:1.45rem;line-height:1.1;letter-spacing:-.01em}
+.event-card.next{border-color:var(--dorado);background:#fff;box-shadow:0 6px 22px rgba(184,151,58,.14)}
+.tag.proximo{background:var(--dorado);color:#fff}
 .event-body .tag{display:inline-block;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px}
 .tag.culto{background:rgba(184,151,58,.14);color:#7c6420}
 .tag.conferencia{background:rgba(27,42,74,.1);color:var(--azul-noche)}
@@ -338,7 +346,7 @@ body.authed .unlocked-flag{display:inline-flex}
 .footer{background:#15213b;color:#aeb8cd;padding:64px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:48px;padding-bottom:48px}
 .footer .fbrand{display:flex;gap:14px;align-items:flex-start}
-.footer .fbrand .seal{width:54px;height:54px;flex-shrink:0}
+.footer .fbrand .seal{height:54px;width:auto;flex-shrink:0}
 .footer .fbrand .n1{font-family:var(--serif);color:#fff;font-size:1.15rem;line-height:1.2}
 .footer .fbrand .motto-sm{font-style:italic;font-family:var(--serif);color:var(--dorado-claro);font-size:.9rem;margin-top:8px}
 .footer h4{color:#fff;font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
@@ -350,7 +358,11 @@ body.authed .unlocked-flag{display:inline-flex}
 .fsocial{display:flex;gap:10px;margin-top:18px}
 .fsocial a{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.18);font-size:1.1rem;transition:all .2s var(--ease)}
 .fsocial a:hover{background:var(--dorado);border-color:var(--dorado);color:#fff}
-.footer-bar{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;text-align:center;font-size:.82rem;color:#8995ad}
+.footer-bar{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;font-size:.82rem;color:#8995ad}
+.footer-bar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 22px;text-align:center}
+.footer-bar .visits{display:inline-flex;align-items:center;gap:7px}
+.footer-bar .visits i{color:var(--dorado)}
+.footer-bar .visits strong{color:#dfe5f0;font-weight:600;font-variant-numeric:tabular-nums}
 
 /* ===================== MODALS ===================== */
 .overlay{
@@ -368,7 +380,7 @@ body.authed .unlocked-flag{display:inline-flex}
 @keyframes rise{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal .close{position:absolute;top:14px;right:14px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-size:1.3rem;color:var(--gris-medio);transition:background .2s var(--ease),color .2s var(--ease)}
 .modal .close:hover{background:var(--blanco-hueso);color:var(--azul-noche)}
-.modal .m-seal{width:54px;height:54px;margin:0 auto 16px}
+.modal .m-seal{height:54px;width:auto;margin:0 auto 16px}
 .modal h2{text-align:center;font-size:1.7rem;margin-bottom:6px}
 .modal .m-sub{text-align:center;color:var(--gris-medio);font-size:.9rem;margin-bottom:26px}
 .field{margin-bottom:18px}
@@ -489,6 +501,11 @@ body.authed .unlocked-flag{display:inline-flex}
 }
 @media (max-width:1100px){
   .verse-spine{display:none}
+  /* la barra superior cede el texto institucional para que quepa el fechador */
+  .topbar .tb-church{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+@media (max-width:860px){
+  .topbar .tb-church{display:none}
 }
 @media (max-width:980px){
   .about-grid{grid-template-columns:1fr;gap:48px}
@@ -516,6 +533,8 @@ body.authed .unlocked-flag{display:inline-flex}
 @media (max-width:520px){
   .brand .brand-text .n2{display:none}
   .car-arrow{display:none}
+  .topbar .tb-date{font-size:.7rem}
+  .footer-bar .wrap{flex-direction:column;gap:6px}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -527,54 +546,11 @@ body.authed .unlocked-flag{display:inline-flex}
 </head>
 <body>
 
-<!-- ========== SVG SEAL (reusable symbol) ========== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="ipar-seal" viewBox="0 0 200 200">
-    <defs>
-      <path id="arcTop" d="M 38 100 A 62 62 0 0 1 162 100" fill="none"/>
-      <path id="arcBot" d="M 42 100 A 58 58 0 0 0 158 100" fill="none"/>
-    </defs>
-    <circle cx="100" cy="100" r="96" fill="var(--blanco-hueso)" stroke="var(--dorado)" stroke-width="2.5"/>
-    <circle cx="100" cy="100" r="88" fill="none" stroke="var(--azul-noche)" stroke-width="1"/>
-    <circle cx="100" cy="100" r="62" fill="#fff" stroke="var(--dorado)" stroke-width="1.5"/>
-    <text fill="var(--azul-noche)" font-family="Inter,sans-serif" font-size="9.2" font-weight="600" letter-spacing="2.4">
-      <textPath href="#arcTop" startOffset="50%" text-anchor="middle">SÍNODO GENERAL IPAR</textPath>
-    </text>
-    <text fill="var(--azul-noche)" font-family="Inter,sans-serif" font-size="8.2" font-weight="600" letter-spacing="1.4">
-      <textPath href="#arcBot" startOffset="50%" text-anchor="middle">LA LUZ EN LAS TINIEBLAS RESPLANDECE</textPath>
-    </text>
-    <text x="18" y="104" fill="var(--dorado)" font-size="12" text-anchor="middle">✦</text>
-    <text x="182" y="104" fill="var(--dorado)" font-size="12" text-anchor="middle">✦</text>
-    <g stroke="var(--dorado)" stroke-width="1.4" opacity=".8">
-      <line x1="100" y1="44" x2="100" y2="56"/>
-      <line x1="84" y1="49" x2="89" y2="59"/>
-      <line x1="116" y1="49" x2="111" y2="59"/>
-      <line x1="72" y1="58" x2="80" y2="65"/>
-      <line x1="128" y1="58" x2="120" y2="65"/>
-    </g>
-    <path d="M100 58 C92 58 86 63 84 70 C90 67 95 67 99 70 C95 73 91 78 90 84 C96 80 102 79 108 82 C112 76 113 69 110 64 C107 60 104 58 100 58 Z" fill="var(--azul-noche)"/>
-    <circle cx="101" cy="63" r="1.7" fill="#fff"/>
-    <path d="M100 86 L116 91 L116 104 C116 113 109 120 100 124 C91 120 84 113 84 104 L84 91 Z" fill="none" stroke="var(--azul-noche)" stroke-width="1.6"/>
-    <line x1="100" y1="118" x2="100" y2="100" stroke="var(--azul-noche)" stroke-width="1.6"/>
-    <circle cx="100" cy="98" r="6.5" fill="none" stroke="var(--dorado)" stroke-width="1.6"/>
-    <circle cx="93" cy="103" r="4.2" fill="none" stroke="var(--dorado)" stroke-width="1.4"/>
-    <circle cx="107" cy="103" r="4.2" fill="none" stroke="var(--dorado)" stroke-width="1.4"/>
-    <path d="M108 122 C112 118 113 113 110 110 C108 108 105 109 105 112" fill="none" stroke="var(--dorado)" stroke-width="1.5" stroke-linecap="round"/>
-    <path d="M64 132 C76 128 90 128 100 134 C110 128 124 128 136 132 L136 150 C124 146 110 146 100 152 C90 146 76 146 64 150 Z" fill="#fff" stroke="var(--azul-noche)" stroke-width="1.8"/>
-    <line x1="100" y1="134" x2="100" y2="152" stroke="var(--azul-noche)" stroke-width="1.4"/>
-    <g stroke="var(--dorado)" stroke-width="1" opacity=".9">
-      <line x1="72" y1="137" x2="94" y2="135"/>
-      <line x1="72" y1="142" x2="94" y2="140"/>
-      <line x1="106" y1="135" x2="128" y2="137"/>
-      <line x1="106" y1="140" x2="128" y2="142"/>
-    </g>
-  </symbol>
-</svg>
-
 <!-- ========== TOPBAR ========== -->
 <div class="topbar">
   <div class="wrap">
-    <p><i class="ti ti-church"></i> Sínodo General · Iglesia Presbiteriana Asociada Reformada de México A.R.</p>
+    <p class="tb-church"><i class="ti ti-church"></i> Sínodo General · Iglesia Presbiteriana Asociada Reformada de México A.R.</p>
+    <p class="tb-date"><i class="ti ti-calendar-month" aria-hidden="true"></i> <time id="todayDate"></time></p>
     <div class="social">
       <a href="#" aria-label="Facebook del Sínodo IPAR"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
       <a href="#" aria-label="Instagram del Sínodo IPAR"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
@@ -587,7 +563,7 @@ body.authed .unlocked-flag{display:inline-flex}
 <header class="nav">
   <div class="nav-inner">
     <a href="#inicio" class="brand" aria-label="Inicio — Sínodo General IPAR">
-      <svg class="seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+      <img class="seal" src="img/sello-ipar.png" width="400" height="464" alt="" decoding="async">
       <span class="brand-text">
         <span class="n1">Sínodo General IPAR</span>
         <span class="n2">Iglesia Presbiteriana Asociada Reformada</span>
@@ -703,13 +679,13 @@ body.authed .unlocked-flag{display:inline-flex}
     <div class="slide" data-i="3" aria-hidden="true" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
       <div class="bg"></div><div class="pattern"></div><div class="scrim"></div>
       <svg class="slide-art" viewBox="0 0 200 200" aria-hidden="true"><text x="100" y="118" text-anchor="middle" font-family="Playfair Display,serif" font-weight="700" font-size="92" fill="currentColor">150</text><text x="100" y="146" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" letter-spacing="7" fill="currentColor">AÑOS</text></svg>
-      <div class="caption"><span class="c-num">04 / 04</span><span class="c-text">150 Aniversario — 1876 · 2026</span></div>
+      <div class="caption"><span class="c-num">04 / 04</span><span class="c-text">150 Aniversario — 1879 · 2029</span></div>
     </div>
   </div>
 
   <div class="hero-inner">
     <div class="hero-inner-in">
-      <svg class="seal-lg" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+      <img class="seal-lg" src="img/sello-ipar.png" width="400" height="464" alt="" decoding="async">
       <p class="eyebrow hero-eyebrow">Iglesia Presbiteriana Asociada Reformada de México A.R.</p>
       <p class="motto">«La luz en las tinieblas resplandece»</p>
       <div class="hero-cta">
@@ -747,9 +723,9 @@ body.authed .unlocked-flag{display:inline-flex}
       <p class="eyebrow" style="margin-bottom:24px">Hitos de nuestra historia</p>
       <div class="timeline">
         <div class="tl-item">
-          <div class="year">1872</div>
-          <div class="ev">Llegada del presbiterianismo a México</div>
-          <div class="ds">Los primeros misioneros reformados establecen congregaciones en territorio nacional.</div>
+          <div class="year">1879</div>
+          <div class="ev">Inicio de la IPAR en México</div>
+          <div class="ds">Nace la obra de la Iglesia Presbiteriana Asociada Reformada en territorio nacional.</div>
         </div>
         <div class="tl-item">
           <div class="year">1901</div>
@@ -757,14 +733,14 @@ body.authed .unlocked-flag{display:inline-flex}
           <div class="ds">Se constituye el cuerpo de gobierno que reúne a los presbiterios del país.</div>
         </div>
         <div class="tl-item">
-          <div class="year">2026</div>
-          <div class="ev">150 Aniversario</div>
-          <div class="ds">Un siglo y medio de testimonio reformado, celebrado a lo largo del año litúrgico.</div>
-        </div>
-        <div class="tl-item">
           <div class="year">2028</div>
           <div class="ev">Plan estratégico 2028–2033</div>
           <div class="ds">Hoja de ruta para la formación, la plantación de iglesias y la diaconía.</div>
+        </div>
+        <div class="tl-item">
+          <div class="year">2029</div>
+          <div class="ev">150 Aniversario · 1879–2029</div>
+          <div class="ds">Un siglo y medio de testimonio reformado, celebrado a lo largo del año litúrgico.</div>
         </div>
       </div>
     </div>
@@ -787,6 +763,18 @@ body.authed .unlocked-flag{display:inline-flex}
     </div>
 
     <div class="event-grid reveal">
+      <article class="event-card next">
+        <div class="event-date range"><div class="d">17–19</div><div class="m">Sep</div><div class="y">2026</div></div>
+        <div class="event-body">
+          <span class="tag proximo">Próximo</span>
+          <h3>III Reunión ordinaria de Sínodo General</h3>
+          <p>Tercera reunión ordinaria del Sínodo General, con la participación de los delegados de los presbiterios.</p>
+          <div class="event-meta">
+            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Río Verde, San Luis Potosí</span>
+            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </article>
       <article class="event-card">
         <div class="event-date"><div class="d">14</div><div class="m">Mar</div><div class="y">2026</div></div>
         <div class="event-body">
@@ -812,7 +800,7 @@ body.authed .unlocked-flag{display:inline-flex}
         </div>
       </article>
       <article class="event-card">
-        <div class="event-date"><div class="d">19</div><div class="m">Jul</div><div class="y">2026</div></div>
+        <div class="event-date"><div class="d">19</div><div class="m">Jul</div><div class="y">2029</div></div>
         <div class="event-body">
           <span class="tag culto">Culto</span>
           <h3>Culto de Acción de Gracias · 150 Aniversario</h3>
@@ -960,7 +948,7 @@ body.authed .unlocked-flag{display:inline-flex}
   <div class="wrap footer-grid">
     <div>
       <div class="fbrand">
-        <svg class="seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+        <img class="seal" src="img/sello-ipar.png" width="400" height="464" alt="" decoding="async" loading="lazy">
         <div>
           <div class="n1">Sínodo General IPAR</div>
           <p class="motto-sm">«La luz en las tinieblas resplandece»</p>
@@ -990,7 +978,14 @@ body.authed .unlocked-flag{display:inline-flex}
       </div>
     </div>
   </div>
-  <div class="footer-bar">© 2026 Sínodo General IPAR — Todos los derechos reservados</div>
+  <div class="footer-bar">
+    <div class="wrap">
+      <span>© 2026 Sínodo General IPAR — Todos los derechos reservados</span>
+      <span class="visits" id="visitCounter" hidden title="Visitas registradas en este navegador (maqueta de fase 1)">
+        <i class="ti ti-eye" aria-hidden="true"></i> Visitas: <strong id="visitCount">—</strong>
+      </span>
+    </div>
+  </div>
 </footer>
 
 <!-- ========== SEARCH MODAL ========== -->
@@ -1015,7 +1010,7 @@ body.authed .unlocked-flag{display:inline-flex}
 <div class="overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
   <div class="modal">
     <button class="close" data-close aria-label="Cerrar"><i class="ti ti-x" aria-hidden="true"></i></button>
-    <svg class="m-seal" aria-hidden="true"><use href="#ipar-seal"></use></svg>
+    <img class="m-seal" src="img/sello-ipar.png" width="400" height="464" alt="" decoding="async" loading="lazy">
     <h2 id="loginTitle">Iniciar sesión</h2>
     <p class="m-sub">Acceso para miembros registrados del Sínodo</p>
     <div class="field">
@@ -1261,6 +1256,51 @@ body.authed .unlocked-flag{display:inline-flex}
     }, {threshold:.5});
     document.querySelectorAll('.num[data-count]').forEach(function(el){ cio.observe(el); });
   }
+
+  /* ---------- Fechador: fecha actual en la barra superior ---------- */
+  (function(){
+    const el = document.getElementById('todayDate');
+    if(!el) return;
+    function pintar(){
+      const hoy = new Date();
+      const pad = function(n){ return (n < 10 ? '0' : '') + n; };
+      el.setAttribute('datetime', hoy.getFullYear() + '-' + pad(hoy.getMonth()+1) + '-' + pad(hoy.getDate()));
+      try{
+        el.textContent = hoy.toLocaleDateString('es-MX', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+      }catch(e){
+        el.textContent = pad(hoy.getDate()) + '/' + pad(hoy.getMonth()+1) + '/' + hoy.getFullYear();
+      }
+      // se repinta al cruzar la medianoche si la pestaña sigue abierta
+      const manana = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()+1, 0, 0, 5);
+      setTimeout(pintar, Math.min(manana - hoy, 2147483647));
+    }
+    pintar();
+  })();
+
+  /* ---------- Contador de visitas ----------
+     Fase 1: se lleva en localStorage, asi que cuenta las visitas de ESTE navegador.
+     Para un total global del sitio hace falta backend (fase 2): basta con
+     reemplazar leerContador() por la llamada al endpoint y dejar el resto igual. */
+  (function(){
+    const caja = document.getElementById('visitCounter');
+    const num  = document.getElementById('visitCount');
+    if(!caja || !num) return;
+    const CLAVE = 'ipar:visitas';
+    function leerContador(){
+      let n = 0;
+      try{
+        n = parseInt(window.localStorage.getItem(CLAVE), 10) || 0;
+        n += 1;
+        window.localStorage.setItem(CLAVE, String(n));
+      }catch(e){
+        n = 1; // navegacion privada o almacenamiento bloqueado
+      }
+      return n;
+    }
+    const total = leerContador();
+    num.textContent = total.toLocaleString('es-MX');
+    caja.hidden = false;
+  })();
 })();
 </script>
 </body>
