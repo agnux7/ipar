@@ -89,7 +89,7 @@ Estos valores son **de muestra** y deben sustituirse por datos oficiales:
 - **Estadísticas de Comunidad:** Sínodos / Presbiterios / Iglesias / Miembros (atributo `data-count`).
 - **Contacto del footer:** dirección, correo y teléfono.
 - **Línea de tiempo (sección IPAR):** confirmar fechas y redacción con el archivo histórico.
-- **Eventos:** la *III Reunión ordinaria de Sínodo General* (17–19 sep 2026, Río Verde, SLP) es real; las otras tres tarjetas siguen siendo de ejemplo y dos de ellas ya quedaron en el pasado.
+- **Eventos:** el calendario solo trae la *III Reunión ordinaria de Sínodo General* (17–19 sep 2026, Río Verde, SLP). Se retiraron las tarjetas de ejemplo; falta cargar el resto de las actividades oficiales.
 - **Fotografías del carrusel:** cada diapositiva es un placeholder. Para usar fotos reales, sustituye el degradado de `.bg` por una imagen:
   ```css
   .slide[data-i="0"] .bg{ background:url('img/adoracion.jpg') center/cover; }

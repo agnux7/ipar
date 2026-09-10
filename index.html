@@ -265,6 +265,8 @@ body.authed .auth-login-label{display:none}
 .event-date .y{font-size:.72rem;color:var(--gris-medio)}
 .event-date.range .d{font-size:1.45rem;line-height:1.1;letter-spacing:-.01em}
 .event-card.next{border-color:var(--dorado);background:#fff;box-shadow:0 6px 22px rgba(184,151,58,.14)}
+/* con un solo evento la tarjeta se centra en vez de quedarse en la primera columna */
+.event-grid:has(.event-card:only-child){grid-template-columns:minmax(0,620px);justify-content:center}
 .tag.proximo{background:var(--dorado);color:#fff}
 .event-body .tag{display:inline-block;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px}
 .tag.culto{background:rgba(184,151,58,.14);color:#7c6420}
@@ -771,42 +773,6 @@ body.authed .unlocked-flag{display:inline-flex}
           <p>Tercera reunión ordinaria del Sínodo General, con la participación de los delegados de los presbiterios.</p>
           <div class="event-meta">
             <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Río Verde, San Luis Potosí</span>
-            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="event-date"><div class="d">14</div><div class="m">Mar</div><div class="y">2026</div></div>
-        <div class="event-body">
-          <span class="tag asamblea">Asamblea</span>
-          <h3>Asamblea General Ordinaria</h3>
-          <p>Reunión anual de delegados de los presbiterios para deliberar sobre la vida del Sínodo.</p>
-          <div class="event-meta">
-            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Templo Central, CDMX</span>
-            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="event-date"><div class="d">02</div><div class="m">May</div><div class="y">2026</div></div>
-        <div class="event-body">
-          <span class="tag conferencia">Conferencia</span>
-          <h3>Sola Scriptura: la suficiencia de la Palabra</h3>
-          <p>Jornada de formación teológica para ministros, ancianos y diáconos de las iglesias.</p>
-          <div class="event-meta">
-            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Seminario CRES</span>
-            <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="event-date"><div class="d">19</div><div class="m">Jul</div><div class="y">2029</div></div>
-        <div class="event-body">
-          <span class="tag culto">Culto</span>
-          <h3>Culto de Acción de Gracias · 150 Aniversario</h3>
-          <p>Servicio conmemorativo por el siglo y medio de testimonio reformado en México.</p>
-          <div class="event-meta">
-            <span class="place"><i class="ti ti-map-pin" aria-hidden="true"></i> Catedral Reformada</span>
             <a href="#difusion" class="more">Ver más <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
