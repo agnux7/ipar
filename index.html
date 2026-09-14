@@ -295,7 +295,15 @@ body.authed .admin-bar{display:flex;align-items:center;gap:12px;background:rgba(
 .resource-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
 .resource-card .ico{font-size:1.7rem;color:var(--dorado);margin-bottom:14px}
 .resource-card h3{font-size:1.15rem;margin-bottom:8px}
-.resource-card p{font-size:.9rem;color:var(--gris-medio);margin-bottom:16px;min-height:42px}
+.resource-card .rdesc{font-size:.9rem;color:var(--gris-medio);margin-bottom:10px;min-height:44px}
+.resource-card .rmeta{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gris-medio);margin-bottom:14px;font-variant-numeric:tabular-nums}
+.resource-card .rfiles{display:flex;flex-direction:column;gap:10px}
+.resource-card .rfiles .rlink span{font-weight:400;font-size:.74rem;color:var(--gris-medio);font-variant-numeric:tabular-nums}
+/* categorías sin archivo todavía: sin enlace y sin realce */
+.resource-card.pendiente{border-left-color:var(--linea);background:transparent}
+.resource-card.pendiente:hover{transform:none;box-shadow:none}
+.resource-card.pendiente .ico{color:var(--gris-medio);opacity:.5}
+.resource-card.pendiente .rmeta{display:inline-block;margin-bottom:0;padding:4px 11px;border:1px dashed var(--linea);border-radius:20px}
 .resource-card .rlink{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--azul-noche)}
 .resource-card .rlink:hover{color:var(--dorado)}
 
@@ -323,6 +331,10 @@ body.authed .admin-bar{display:flex;align-items:center;gap:12px;background:rgba(
 .restricted{position:relative;background:#fff;border-top:1px solid var(--linea)}
 .restricted .inner-blur{transition:filter .4s var(--ease),opacity .4s var(--ease)}
 .restricted-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+/* CRES tiene cuatro fichas: en pantalla ancha llenan una sola fila */
+@media (min-width:981px){
+  #cres .restricted-grid{grid-template-columns:repeat(4,1fr)}
+}
 .rcard{border:1px solid var(--linea);border-radius:var(--radius);padding:24px;background:var(--blanco-hueso)}
 .rcard i{font-size:1.5rem;color:var(--dorado);margin-bottom:12px}
 .rcard h3{font-size:1.1rem;margin-bottom:6px}
@@ -580,7 +592,7 @@ body.authed .unlocked-flag{display:inline-flex}
             <a href="#ipar"><i class="ti ti-book-2"></i> Credo</a>
             <a href="#ipar"><i class="ti ti-history"></i> Historia</a>
             <a href="#ipar"><i class="ti ti-award"></i> 150 Aniversario</a>
-            <a href="#ipar"><i class="ti ti-map-pin"></i> Plan 2028–2033</a>
+            <a href="#ipar"><i class="ti ti-map-pin"></i> Plan estratégico 2023–2033</a>
             <a href="#ipar"><i class="ti ti-arrows-left-right"></i> Próximos · pasados</a>
           </div>
         </li>
@@ -624,7 +636,6 @@ body.authed .unlocked-flag{display:inline-flex}
             <a href="#cres"><i class="ti ti-users-group"></i> Directiva</a>
             <a href="#cres"><i class="ti ti-school"></i> Oferta Académica</a>
             <a href="#cres"><i class="ti ti-file-certificate"></i> Convenios</a>
-            <a href="#cres"><i class="ti ti-building-bank"></i> Edinburgh</a>
             <a href="#cres"><i class="ti ti-calendar"></i> Calendario Escolar</a>
             <span class="restricted-tag"><i class="ti ti-lock"></i> Requiere iniciar sesión</span>
           </div>
@@ -730,14 +741,14 @@ body.authed .unlocked-flag{display:inline-flex}
           <div class="ds">Nace la obra de la Iglesia Presbiteriana Asociada Reformada en territorio nacional.</div>
         </div>
         <div class="tl-item">
-          <div class="year">1901</div>
-          <div class="ev">Fundación del Sínodo General</div>
-          <div class="ds">Se constituye el cuerpo de gobierno que reúne a los presbiterios del país.</div>
+          <div class="year">2023</div>
+          <div class="ev">Plan estratégico 2023–2033</div>
+          <div class="ds">Hoja de ruta para la formación, la plantación de iglesias y la diaconía.</div>
         </div>
         <div class="tl-item">
-          <div class="year">2028</div>
-          <div class="ev">Plan estratégico 2028–2033</div>
-          <div class="ds">Hoja de ruta para la formación, la plantación de iglesias y la diaconía.</div>
+          <div class="year">2024</div>
+          <div class="ev">Fundación del Sínodo General</div>
+          <div class="ds">Se constituye el cuerpo que reúne a los dos sínodos y a los ocho presbiterios del país.</div>
         </div>
         <div class="tl-item">
           <div class="year">2029</div>
@@ -791,44 +802,91 @@ body.authed .unlocked-flag{display:inline-flex}
     <div class="section-head reveal">
       <p class="eyebrow">Biblioteca institucional</p>
       <h2>Recursos para la iglesia</h2>
-      <p>Documentos confesionales, normativos y devocionales al servicio de las congregaciones del Sínodo.</p>
+      <p>Credos, confesiones y documentos normativos, disponibles para descarga al servicio de las congregaciones del Sínodo.</p>
     </div>
     <div class="resource-grid reveal">
       <article class="resource-card">
         <i class="ti ti-file-text ico" aria-hidden="true"></i>
-        <h3>Constitución</h3>
-        <p>Marco fundamental que rige el gobierno y la organización del Sínodo General.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <h3>Constitución de la IPAR</h3>
+        <p class="rdesc">Marco fundamental que rige el gobierno y la organización de la Iglesia. Edición de 2009.</p>
+        <p class="rmeta">PDF · 83 páginas · 632 KB</p>
+        <a href="docs/constitucion-ipar-2009.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
       </article>
       <article class="resource-card">
         <i class="ti ti-book ico" aria-hidden="true"></i>
-        <h3>Confesión de Fe</h3>
-        <p>La Confesión de Fe de Westminster, norma doctrinal subordinada a la Escritura.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <h3>Confesión de Fe de Westminster</h3>
+        <p class="rdesc">Norma doctrinal subordinada a la Escritura. Esta edición incluye el Catecismo Menor.</p>
+        <p class="rmeta">PDF · 138 páginas · 592 KB</p>
+        <a href="docs/confesion-de-fe-westminster.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
       </article>
       <article class="resource-card">
+        <i class="ti ti-book-2 ico" aria-hidden="true"></i>
+        <h3>Catecismo Mayor de Westminster</h3>
+        <p class="rdesc">Exposición amplia de la doctrina reformada en preguntas y respuestas.</p>
+        <p class="rmeta">PDF · 29 páginas · 307 KB</p>
+        <a href="docs/catecismo-mayor-westminster.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-book-2 ico" aria-hidden="true"></i>
+        <h3>Catecismo Menor de Westminster</h3>
+        <p class="rdesc">Versión breve para la enseñanza en la familia y la congregación. Texto de 1647.</p>
+        <p class="rmeta">PDF · 11 páginas · 102 KB</p>
+        <a href="docs/catecismo-menor-westminster.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-book-2 ico" aria-hidden="true"></i>
+        <h3>Catecismo de Heidelberg</h3>
+        <p class="rdesc">Instrucción en la fe reformada organizada en cincuenta y dos domingos.</p>
+        <p class="rmeta">PDF · 16 páginas · 179 KB</p>
+        <a href="docs/catecismo-de-heidelberg.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-file-certificate ico" aria-hidden="true"></i>
+        <h3>Segunda Confesión Helvética</h3>
+        <p class="rdesc">Confesión de 1566, uno de los documentos fundacionales de la tradición reformada.</p>
+        <p class="rmeta">PDF · 85 páginas · 429 KB</p>
+        <a href="docs/segunda-confesion-helvetica.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-file-certificate ico" aria-hidden="true"></i>
+        <h3>Los Cánones de Dort</h3>
+        <p class="rdesc">Respuesta del Sínodo de Dordrecht sobre la elección divina y la gracia.</p>
+        <p class="rmeta">PDF · 26 páginas · 341 KB</p>
+        <a href="docs/canones-de-dort.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+      </article>
+      <article class="resource-card">
+        <i class="ti ti-school ico" aria-hidden="true"></i>
+        <h3>El Credo Apostólico</h3>
+        <p class="rdesc">Curso de estudio en tres cuadernos, de Humberto Casanova y Jeff Stam.</p>
+        <div class="rfiles">
+          <a href="docs/credo-apostolico-nivel-basico.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Nivel básico <span>80 pág.</span></a>
+          <a href="docs/credo-apostolico-nivel-superior.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Nivel superior <span>88 pág.</span></a>
+          <a href="docs/credo-apostolico-manual-del-maestro.pdf" class="rlink" target="_blank" rel="noopener"><i class="ti ti-download" aria-hidden="true"></i> Manual del maestro <span>125 pág.</span></a>
+        </div>
+      </article>
+      <article class="resource-card pendiente">
         <i class="ti ti-gavel ico" aria-hidden="true"></i>
         <h3>Reglas Parlamentarias</h3>
-        <p>Procedimiento ordenado para asambleas, presbiterios y consistorios.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <p class="rdesc">Procedimiento ordenado para asambleas, presbiterios y consistorios.</p>
+        <p class="rmeta">Pendiente de carga</p>
       </article>
-      <article class="resource-card">
+      <article class="resource-card pendiente">
         <i class="ti ti-music ico" aria-hidden="true"></i>
         <h3>Libro de Culto y Liturgia</h3>
-        <p>Orden de los servicios, salmos y formas litúrgicas para la adoración pública.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <p class="rdesc">Orden de los servicios, salmos y formas litúrgicas para la adoración pública.</p>
+        <p class="rmeta">Pendiente de carga</p>
       </article>
-      <article class="resource-card">
+      <article class="resource-card pendiente">
         <i class="ti ti-heart ico" aria-hidden="true"></i>
         <h3>Devocionales</h3>
-        <p>Meditaciones diarias y guías de estudio bíblico para familias e individuos.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <p class="rdesc">Meditaciones diarias y guías de estudio bíblico para familias e individuos.</p>
+        <p class="rmeta">Pendiente de carga</p>
       </article>
-      <article class="resource-card">
+      <article class="resource-card pendiente">
         <i class="ti ti-shield ico" aria-hidden="true"></i>
         <h3>En defensa de la fe</h3>
-        <p>Materiales apologéticos para responder con gracia y firmeza al pensamiento actual.</p>
-        <a href="#recursos" class="rlink"><i class="ti ti-download" aria-hidden="true"></i> Descargar / Ver</a>
+        <p class="rdesc">Materiales apologéticos para responder con gracia y firmeza al pensamiento actual.</p>
+        <p class="rmeta">Pendiente de carga</p>
       </article>
     </div>
   </div>
@@ -840,11 +898,11 @@ body.authed .unlocked-flag{display:inline-flex}
     <div class="section-head reveal">
       <p class="eyebrow">Comunidad</p>
       <h2>Una iglesia nacional</h2>
-      <p>El Sínodo reúne presbiterios e iglesias a lo largo del país, unidos en doctrina, gobierno y misión.</p>
+      <p>El Sínodo General reúne a dos sínodos y ocho presbiterios a lo largo del país, unidos en doctrina, gobierno y misión.</p>
     </div>
     <div class="stat-row reveal">
-      <div class="stat"><div class="num" data-count="3">3</div><div class="lab">Sínodos</div></div>
-      <div class="stat"><div class="num" data-count="12">12</div><div class="lab">Presbiterios</div></div>
+      <div class="stat"><div class="num" data-count="2">2</div><div class="lab">Sínodos</div></div>
+      <div class="stat"><div class="num" data-count="8">8</div><div class="lab">Presbiterios</div></div>
       <div class="stat"><div class="num" data-count="148">148</div><div class="lab">Iglesias</div></div>
       <div class="stat"><div class="num" data-count="9500">9,500</div><div class="lab">Miembros activos</div></div>
     </div>
@@ -870,7 +928,6 @@ body.authed .unlocked-flag{display:inline-flex}
       <div class="rcard"><i class="ti ti-users-group" aria-hidden="true"></i><h3>Directiva</h3><p>Cuerpo docente y administrativo del centro.</p></div>
       <div class="rcard"><i class="ti ti-school" aria-hidden="true"></i><h3>Oferta Académica</h3><p>Programas de grado y formación continua.</p></div>
       <div class="rcard"><i class="ti ti-file-certificate" aria-hidden="true"></i><h3>Convenios</h3><p>Acuerdos con instituciones reformadas.</p></div>
-      <div class="rcard"><i class="ti ti-building-bank" aria-hidden="true"></i><h3>Edinburgh</h3><p>Programa de intercambio internacional.</p></div>
       <div class="rcard"><i class="ti ti-calendar" aria-hidden="true"></i><h3>Calendario Escolar</h3><p>Fechas del ciclo académico vigente.</p></div>
     </div>
   </div>

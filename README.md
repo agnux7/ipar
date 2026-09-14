@@ -17,6 +17,7 @@ sinodo-ipar/
 │   ├── sello-ipar.png       # Sello oficial del Sínodo (fondo transparente)
 │   ├── favicon-32.png       # Ícono de pestaña
 │   └── apple-touch-icon.png # Ícono para iOS
+├── docs/           # PDF que se descargan desde la sección Recursos
 └── README.md       # Este archivo
 ```
 
@@ -86,15 +87,17 @@ Para dominio propio: **Project → Settings → Domains** en Vercel.
 
 Estos valores son **de muestra** y deben sustituirse por datos oficiales:
 
-- **Estadísticas de Comunidad:** Sínodos / Presbiterios / Iglesias / Miembros (atributo `data-count`).
+- **Estadísticas de Comunidad:** Sínodos y Presbiterios ya son oficiales (2 y 8). Faltan **Iglesias** y **Miembros activos** (atributo `data-count`).
 - **Contacto del footer:** dirección, correo y teléfono.
-- **Línea de tiempo (sección IPAR):** confirmar fechas y redacción con el archivo histórico.
+- **Línea de tiempo (sección IPAR):** las cuatro fechas ya son oficiales (1879 inicio de la IPAR, 2023 plan estratégico, 2024 fundación del Sínodo General, 2029 aniversario). Falta afinar la redacción con el archivo histórico.
 - **Eventos:** el calendario solo trae la *III Reunión ordinaria de Sínodo General* (17–19 sep 2026, Río Verde, SLP). Se retiraron las tarjetas de ejemplo; falta cargar el resto de las actividades oficiales.
+- **Recursos:** ocho documentos ya se descargan desde `docs/`. Cuatro categorías siguen sin archivo y aparecen marcadas como *Pendiente de carga*: Reglas Parlamentarias, Libro de Culto y Liturgia, Devocionales y En defensa de la fe.
+- **Derechos de los PDF:** las confesiones históricas son de dominio público, pero algunas ediciones y los tres cuadernos de *El Credo Apostólico* (Humberto Casanova y Jeff Stam, Libros Desafío) son publicaciones con autor y editorial. Conviene confirmar el permiso de distribución antes de difundir el sitio.
 - **Fotografías del carrusel:** cada diapositiva es un placeholder. Para usar fotos reales, sustituye el degradado de `.bg` por una imagen:
   ```css
   .slide[data-i="0"] .bg{ background:url('img/adoracion.jpg') center/cover; }
   ```
-- **Fechas históricas:** la IPAR inicia en **1879** y cumple **150 años en 2029**; el resto de los hitos de la línea de tiempo (1901, 2028) sigue siendo de muestra.
+- **Estructura de gobierno:** un Sínodo General (fundado en 2024) que reúne a **2 sínodos** y **8 presbiterios**.
 
 ---
 
