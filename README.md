@@ -74,7 +74,8 @@ Para dominio propio: **Project → Settings → Domains** en Vercel.
 - Mega-menú por hover en escritorio; menú hamburguesa con acordeón en móvil (colapsa en ≤1199px).
 - Carrusel del hero con autoplay, flechas, puntos, navegación por teclado (← →) y swipe táctil.
 - Modal de búsqueda a pantalla completa (resultados simulados).
-- **Inicio de sesión simulado** (sin validación): al "entrar" se desbloquean visualmente las secciones **CRES** y **Diezmos** y aparece el panel de administrador de eventos.
+- **Inicio de sesión simulado** (sin validación): al "entrar" se desbloquea visualmente la sección **Diezmos** y aparece el panel de administrador de eventos.
+- **CRES** ya no es sección del sitio: el menú abre el sitio del seminario, https://seminariocres.com/, en una pestaña nueva.
 - Modal "Crear nuevo evento" (panel de administrador, sin guardar datos reales).
 - **Fechador:** la barra superior muestra la fecha actual en español y se repinta al cruzar la medianoche.
 - **Contador de visitas** en el pie. En esta fase se guarda en `localStorage`, así que cuenta las visitas **de cada navegador**, no el total global del sitio; para un total real hace falta backend (fase 2).
